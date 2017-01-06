@@ -2,3 +2,24 @@ body {
     padding-top: 50px;
     overflow-x:hidden;
 }
+
+.static{
+
+}
+
+.move-to-right{
+    transform: translate(200%, 0%);
+}
+
+.move-to-left{
+    transform: translate(-200%, 0%);
+}
+
+.move-up{
+    transform: translate(0%, -200%);
+}
+
+
+.move {
+    transition: all 1.3s ease-in-out;
+}

@@ -1,9 +1,9 @@
 app = angular.module(
     'ArgumentationController');
 
-app.directive('myArgumentations', function() {
+app.directive('searchArgumentation', function() {
     return {
-        templateUrl: "argumentation/myargumentations.html",
-        controller: "MyArgumentationShowController"
+        templateUrl: "argumentation/searchargumentation.html",
+        controller: "ArgumentationSearchController"
     };
 });

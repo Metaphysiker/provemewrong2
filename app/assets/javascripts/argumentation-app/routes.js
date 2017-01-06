@@ -5,7 +5,7 @@ angular.module(
         $routeProvider.when("/overview/",{
             templateUrl: "argumentation/overview.html"
         }).when("/search",{
-            controller: "ArgumentationSearchController",
+            controller: "MovingBlockController",
             templateUrl: "argumentation/search.html"
         });
     }
