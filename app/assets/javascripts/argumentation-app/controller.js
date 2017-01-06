@@ -93,4 +93,8 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', fun
 
     });
 
+    $scope.getcontent = function(argument){
+        $scope.argumentcontent = argument;
+    };
+
 }]);

@@ -1,0 +1,22 @@
+<div class="col-md-9">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading text-justify">
+            <h3 class="panel-title">{{ argumentcontent.title }}</h3>
+        </div>
+        <div class="panel-body text-justify">
+            <div class="lead text-justify white-space-pre-line">
+                {{ argumentcontent.content }}
+            </div>
+            <br>
+            <br>
+
+            <button class="btn btn-small btn-primary"
+                    ng-click="get_next_argumentation(argumentcontent.argumentation.id,2)"
+                    ng-if="argumentcontent.argumentation">
+                Show full argument
+            </button>
+        </div>
+    </div>
+
+</div>
