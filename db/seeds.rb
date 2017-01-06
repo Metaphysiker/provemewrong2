@@ -7,4 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 if Rails.env == 'development'
   mainuser = User.create!(email: "s.raess@me.com", password: "password")
+
+  1000.times do
+    argumentation = Argumentation.create!(
+        title: Faker::Lorem.sentence,
+        content: Faker::Lorem.paragraph(20, true, 20),
+        user_id: mainuser.id
+    )
+  end
+
 end

@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'sprockets'
+# Gem for angular templates
+gem 'angular-rails-templates'
 #Gem Faker
 gem 'faker'
 #Gem Bower Rails
