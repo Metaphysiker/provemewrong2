@@ -2,7 +2,7 @@
 
 <div ng-include=" 'argumentation/searchelements/loading_bar.html' "></div>
 
-<div ng-if="loading == false">
+<div class="animate-if" ng-if="loading == false">
     <section class="move" ng-class="{'static': movingBlock == 1, 'move-to-right': movingBlock == 2, 'come-in-from-left': movingBlock == 3, 'move-to-left': movingBlock == 4, 'come-in-from-right': movingBlock == 5}">
 
         <div ng-if="argumentations.length > 0">

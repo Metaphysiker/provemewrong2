@@ -7,13 +7,14 @@ var app = angular.module(
 
 app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParams', function($scope, $timeout, $q, $routeParams){
 
-    var argumentationId =  $routeParams.id;
-    var startingposition = $routeParams.sp;
+    $scope.argumentationId =  $routeParams.id;
+    $scope.startingposition = $routeParams.sp;
+    $scope.loading = false;
 
-    if (startingposition == undefined){
+    if ($scope.startingposition == undefined){
         $scope.movingBlock = 1;
     } else {
-        $scope.movingBlock = startingposition;
+        $scope.movingBlock = $scope.startingposition;
     }
 
     $scope.test = "Test";
@@ -28,7 +29,6 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
 
 app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', function($scope, $http, $timeout){
     //all variables
-    $scope.loading = false;
     $scope.page = 0;
     $scope.keywords = "";
     $scope.argumentations = [{title: "Please type in a word!"}];
@@ -76,6 +76,21 @@ app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', f
 
 }]);
 
-app.controller("ArgumentationShowController", ['$scope', function($scope){
-    $scope.movingBlock = 1;
+app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', function($scope, $http, $timeout){
+    $scope.argumentations = {};
+    $scope.loading = true;
+
+    $http({
+        method: 'GET',
+        url: '/argumentations/' + $scope.argumentationId + '.json',
+        params: {id: $scope.argumentationId}
+    }).then(function successCallback(response) {
+        $scope.argumentation = response.data;
+        $scope.loading = false;
+        $timeout(function () {
+            $scope.movingBlock = $scope.startingposition + 1;
+        }, 700);
+
+    });
+
 }]);
