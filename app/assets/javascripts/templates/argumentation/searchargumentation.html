@@ -1,8 +1,14 @@
-Argumentation 1
+<div ng-include=" 'argumentation/searchelements/searchform.html' "></div>
 
-Argumentation 2
+<section class="move" ng-class="{'static': movingBlock == 1, 'move-to-right': movingBlock == 2, 'move-to-left': movingBlock == 3, 'move-up': movingBlock == 4}">
 
-Argumentation 3
+    <div ng-include=" 'argumentation/searchelements/searchnav.html' "></div>
+
+    <div ng-include=" 'argumentation/searchelements/results.html' "></div>
+
+    <div ng-include=" 'argumentation/searchelements/searchnav.html' "></div>
+
+</section>
 
 <button ng-click="moveBlock()"
         class="btn btn-lg btn-info">

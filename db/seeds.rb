@@ -14,6 +14,13 @@ if Rails.env == 'development'
         content: Faker::Lorem.paragraph(20, true, 20),
         user_id: mainuser.id
     )
+    10.times do
+      argument = Argument.create!(
+          title: Faker::Lorem.sentence,
+          content: Faker::Lorem.paragraph(20, true, 20),
+          argumentation_id: argumentation.id
+      )
+    end
   end
 
 end

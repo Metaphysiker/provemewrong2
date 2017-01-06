@@ -4,6 +4,9 @@ class ArgumentationsController < ApplicationController
   end
 
   def search
-    @argumentations = Argumentation.all.limit(10)
+    if params[:keywords].present?
+     @argumentations = Argumentation.search_by_title_content(params[:keywords]).offset(10 * params[:page].to_i).limit(10)
+    end
   end
+
 end
