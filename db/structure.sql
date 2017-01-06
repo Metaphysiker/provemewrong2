@@ -80,6 +80,39 @@ ALTER SEQUENCE argumentations_id_seq OWNED BY argumentations.id;
 
 
 --
+-- Name: arguments; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE arguments (
+    id integer NOT NULL,
+    title character varying,
+    content text,
+    argumentation_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: arguments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE arguments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: arguments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE arguments_id_seq OWNED BY arguments.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -139,6 +172,13 @@ ALTER TABLE ONLY argumentations ALTER COLUMN id SET DEFAULT nextval('argumentati
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY arguments ALTER COLUMN id SET DEFAULT nextval('arguments_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
@@ -156,6 +196,14 @@ ALTER TABLE ONLY ar_internal_metadata
 
 ALTER TABLE ONLY argumentations
     ADD CONSTRAINT argumentations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: arguments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY arguments
+    ADD CONSTRAINT arguments_pkey PRIMARY KEY (id);
 
 
 --
@@ -182,6 +230,13 @@ CREATE INDEX index_argumentations_on_user_id ON argumentations USING btree (user
 
 
 --
+-- Name: index_arguments_on_argumentation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_arguments_on_argumentation_id ON arguments USING btree (argumentation_id);
+
+
+--
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -203,6 +258,7 @@ SET search_path TO "$user", public;
 
 INSERT INTO schema_migrations (version) VALUES
 ('20170105234758'),
-('20170106003414');
+('20170106003414'),
+('20170106122234');
 
 
