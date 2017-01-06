@@ -15,6 +15,14 @@ body {
     transform: translate(-200%, 0%);
 }
 
+.come-in-from-left{
+    animation: jumptoleft-goright 1.3s ease-in-out;
+}
+
+.come-in-from-right{
+    animation: jumptoright-goleft 1.3s ease-in-out;
+}
+
 .move-up{
     transform: translate(0%, -200%);
 }
@@ -22,4 +30,51 @@ body {
 
 .move {
     transition: all 1.3s ease-in-out;
+}
+
+@keyframes jumptoright-goleft {
+    0% {
+        transform: translate(200%, 0%);
+    }
+    90% {
+        transform: translate(0%, 0%);
+    }
+    100%{
+        display: none;
+    }
+}
+
+@keyframes jumptoleft-goright {
+    0% {
+        transform: translate(-200%, 0%);
+    }
+    90% {
+        transform: translate(0%, 0%);
+    }
+    100%{
+        display: none;
+    }
+}
+
+.animate-if {
+
+
+}
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.6s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+    opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+    opacity:1;
+}
+
+.waiting{
+    margin-top: 100px;
 }

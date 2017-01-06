@@ -7,6 +7,9 @@ angular.module(
         }).when("/search",{
             controller: "MovingBlockController",
             templateUrl: "argumentation/search.html"
+        }).when("/:id",{
+            controller: "MovingBlockController",
+            templateUrl: "argumentation/show.html"
         });
     }
 ]);

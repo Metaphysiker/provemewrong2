@@ -8,7 +8,7 @@
 if Rails.env == 'development'
   mainuser = User.create!(email: "s.raess@me.com", password: "password")
 
-  1000.times do
+  10.times do
     argumentation = Argumentation.create!(
         title: Faker::Lorem.sentence,
         content: Faker::Lorem.paragraph(20, true, 20),
@@ -20,6 +20,26 @@ if Rails.env == 'development'
           content: Faker::Lorem.paragraph(20, true, 20),
           argumentation_id: argumentation.id
       )
+    end
+  end
+
+  100.times do |i|
+    puts "I is: #{i}"
+
+    user = User.create!(email: Faker::Internet.email, password: "password")
+    10.times do
+      argumentation = Argumentation.create!(
+          title: Faker::Lorem.sentence,
+          content: Faker::Lorem.paragraph(20, true, 20),
+          user_id: user.id
+      )
+      10.times do
+        argument = Argument.create!(
+            title: Faker::Lorem.sentence,
+            content: Faker::Lorem.paragraph(20, true, 20),
+            argumentation_id: argumentation.id
+        )
+      end
     end
   end
 
