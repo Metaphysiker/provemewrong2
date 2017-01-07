@@ -10,6 +10,9 @@ angular.module(
         }).when("/:id",{
             controller: "MovingBlockController",
             templateUrl: "argumentation/show.html"
+        }).when("/:id/edit",{
+            controller: "MovingBlockController",
+            templateUrl: "argumentation/edit.html"
         });
     }
 ]);

@@ -7,4 +7,5 @@ json.arguments @argumentation.arguments do |argument|
   json.title argument.title
   json.content argument.content
   json.id argument.id
+  json.place argument.place
 end

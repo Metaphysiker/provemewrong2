@@ -14,3 +14,10 @@ app.directive('showArgumentation', function() {
         controller: "ArgumentationShowController"
     };
 });
+
+app.directive('editArgumentation', function() {
+    return {
+        templateUrl: "argumentation/editelements/editargumentation.html",
+        controller: "ArgumentationEditController"
+    };
+});

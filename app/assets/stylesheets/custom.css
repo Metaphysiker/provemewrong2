@@ -7,6 +7,24 @@ body {
     background-color : #7e8180 !important;
 }
 
+.highlightedText {
+    background: #e5eaed;
+    color: orange;
+}
+.bg-standard{
+    background-color: #2b3e50 !important;
+}
+
+.bg-lightergray{
+    background-color : #6b7283 !important;
+}
+.angular-with-newlines {
+    white-space: pre-wrap;
+}
+div.white-space-pre-line {
+    white-space: pre-line;
+}
+
 .static{
 
 }

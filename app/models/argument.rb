@@ -8,7 +8,7 @@ class Argument < ApplicationRecord
   pg_search_scope :search_by_title_content, :against => [:title, :content]
 
   def add_place
-    argumentation = Argumentation.find(self.argumentation)
+    argumentation = Argumentation.find(self.argumentation.id)
     place_number = argumentation.arguments.maximum("place")
     if place_number == 0
       self.update(place: 1)
