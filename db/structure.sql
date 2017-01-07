@@ -87,6 +87,7 @@ CREATE TABLE arguments (
     id integer NOT NULL,
     title character varying,
     content text,
+    place integer DEFAULT 0,
     argumentation_id integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL

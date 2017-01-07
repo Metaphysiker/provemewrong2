@@ -3,6 +3,7 @@ class CreateArguments < ActiveRecord::Migration[5.0]
     create_table :arguments do |t|
       t.string :title
       t.text :content
+      t.integer :place, default: 0
       t.belongs_to :argumentation, index: true
 
       t.timestamps
