@@ -1,4 +1,4 @@
 <h1 class="display-3">{{ argumentation.title }}</h1>
-<div class="lead text-justify white-space-pre-line" ng-bind-html="argumentation.content"></div>
+<div ng-include=" 'argumentation/showelements/argumentationcontent.html' "></div>
 <h3 class="display-3">By {{ argumentation.owner }}</h3>
 <br>

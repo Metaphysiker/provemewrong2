@@ -4,9 +4,10 @@
     {{ argumentation.title }}
 </h1>
 
-<textarea type="text" class="form-control" rows="9" required
+<textarea type="text" class="form-control" rows="15" required
           name="argumentation_content" ng-model="argumentation.content"></textarea>
-<div class="lead text-justify white-space-pre-line" ng-bind-html="argumentation.content"></div>
+
+<div ng-include=" 'argumentation/showelements/argumentationcontent.html' "></div>
 
 <h3 class="display-3">By {{ argumentation.owner }}</h3>
 

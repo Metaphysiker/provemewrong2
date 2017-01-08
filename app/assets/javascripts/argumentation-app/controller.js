@@ -120,6 +120,20 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
         return firstargument;
     };
 
+    $scope.buttonmaker = function(haystack) {
+        //needle = /argumentation-link_to\((\d+)\)/i;
+        needle = /argumentation-link_to\((\d+),\s([\w\s]+)\)/;
+        haystack = haystack || "";
+        haystack = $sanitize(haystack);
+        if(!needle) {
+            return $sce.trustAsHtml(haystack);
+        }
+        //needle = needle.replace(/\s/g, "|");
+        return $sce.trustAsHtml(haystack.replace(new RegExp(needle, "gi"), function(match) {
+            console.log(match);
+            return '<button ng-click="goToArgumentation(' +  needle.exec(match)[1] + ')" class="btn btn-md btn-info"> ' + needle.exec(match)[2] + '</button>'
+        }));
+    };
 }]);
 
 app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$sce', function($scope, $http, $timeout, $sce){

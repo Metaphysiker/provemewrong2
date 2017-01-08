@@ -10,7 +10,7 @@
             <textarea type="text" class="form-control" rows="40" required
                   name="argumentcontent_content" ng-model="argumentcontent.content"></textarea>
 
-            <div class="lead text-justify white-space-pre-line" ng-bind-html="argumentcontent.content"></div>
+            <div ng-include=" 'argumentation/showelements/argumentcontentcontent.html' "></div>
 
         </div>
     </div>
