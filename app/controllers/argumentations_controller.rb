@@ -1,5 +1,5 @@
 class ArgumentationsController < ApplicationController
-  before_action :find_argumentation, only: [:show, :update]
+  before_action :find_argumentation, only: [:show]
 
   PAGE_SIZE = 10
 
@@ -29,10 +29,63 @@ class ArgumentationsController < ApplicationController
 
   end
 
-  private
-
-  def find_argumentation
-    Rails::logger.debug params.inspect
+  def update
+    argumentation = Argumentation.find(params[:id])
+    argumentation.update(argumentation_params)
+    updatearguments(argumentation, params[:arguments])
     @argumentation = Argumentation.find(params[:id])
   end
+
+  private
+
+  def updatearguments(argumentation, param_arguments)
+
+    param_arguments_ids = []
+
+    param_arguments.each do |argument|
+      param_arguments_ids.push(argument["id"])
+    end
+
+    argumentation.arguments.each do |argument|
+      unless param_arguments_ids.include?(argument.id)
+        argument.destroy
+      end
+    end
+
+    param_arguments.each do |argument|
+
+      if argument["id"] == 0
+        Argument.create!(
+                    title: argument["title"],
+                    content: argument["content"],
+                    place: argument["place"],
+                    argumentation_id: argumentation.id
+        )
+      else
+        argumentu = Argument.find(argument["id"])
+        argument_params = ActionController::Parameters.new({
+                                                               title: argument["title"],
+                                                               content:  argument["content"],
+                                                               place: argument["place"]
+                                                           })
+        argumentu.update(argument_params.permit(:title, :content, :place))
+      end
+
+    end
+  end
+
+  def find_argumentation
+    @argumentation = Argumentation.find(params[:id])
+    Rails::logger.debug @argumentation.inspect
+  end
+
+
+  def argumentation_params
+    params.permit(:title, :content,  :arguments, pets_attributes: [:id, :title, :content, :place])
+  end
+
+  def argument_params
+    params.permit(:id, :title, :content, :place)
+  end
+
 end

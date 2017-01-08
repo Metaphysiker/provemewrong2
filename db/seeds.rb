@@ -20,6 +20,7 @@ if Rails.env == 'development'
           content: Faker::Lorem.paragraph(20, true, 20),
           argumentation_id: argumentation.id
       )
+      argument.add_place
     end
   end
 
@@ -39,6 +40,7 @@ if Rails.env == 'development'
             content: Faker::Lorem.paragraph(20, true, 20),
             argumentation_id: argumentation.id
         )
+        argument.add_place
       end
     end
   end

@@ -138,11 +138,28 @@ app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$s
     $scope.deletemode = false;
     $scope.selectedArguments = [];
 
+    $scope.save = function(){
+        if ($scope.form.$valid) {
+            console.log($scope.argumentation);
+            $http({
+                method: 'PUT',
+                url: '/argumentations/' + $scope.argumentationId + '.json',
+                data:  $scope.argumentation
+            }).then(function successCallback(response) {
+                $scope.argumentation = response.data;
+                console.log($scope.argumentation);
+                $scope.form.$setPristine();
+                $scope.form.$setUntouched();
+            });
+        }
+    };
+
     $scope.addArgument = function(){
 
         var length = $scope.argumentation.arguments.length;
         $scope.argumentation.arguments.push({title: "Lorem Ipsum", content: "Dolores Faceres esse aut", place: length + 1, id: 0});
         $scope.argumentcontent = $scope.getnthargument($scope.argumentation, length + 1);
+        $scope.form.$setDirty();
     };
 
     $scope.toggleSelectionForDeletion = function(argument){
@@ -156,7 +173,8 @@ app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$s
             var place = argument.place;
             $scope.argumentation.arguments.splice(index, 1);
             $scope.reorder_place(place);
-            console.log($scope.argumentation);
+            $scope.argumentcontent = $scope.getnthargument($scope.argumentation, place);
+            $scope.form.$setDirty();
         }
     };
 

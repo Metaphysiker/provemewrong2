@@ -1,6 +1,6 @@
 class Argument < ApplicationRecord
-  after_create :add_place
-  after_destroy :reorder_place
+  #after_create :add_place
+  #after_destroy :reorder_place
 
   belongs_to :argumentation
 
@@ -18,7 +18,7 @@ class Argument < ApplicationRecord
     end
   end
 
-  def reorder_place
+   def reorder_place
     argumentation = Argumentation.find(self.argumentation)
     place_of_deleted_argument = self.place
     argumentation.arguments.each do |argument|
