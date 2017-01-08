@@ -31,6 +31,10 @@ class ArgumentationsController < ApplicationController
 
   def update
     argumentation = Argumentation.find(params[:id])
+
+    params[:title] = ActionController::Base.helpers.sanitize(params[:title])
+    params[:content] = ActionController::Base.helpers.sanitize(params[:content])
+
     argumentation.update(argumentation_params)
     updatearguments(argumentation, params[:arguments])
     @argumentation = Argumentation.find(params[:id])

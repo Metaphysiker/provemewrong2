@@ -122,7 +122,7 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
 
     $scope.buttonmaker = function(haystack) {
         //needle = /argumentation-link_to\((\d+)\)/i;
-        needle = /argumentation-link_to\((\d+),\s([\w\s]+)\)/;
+        needle = /argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/;
         haystack = haystack || "";
         haystack = $sanitize(haystack);
         if(!needle) {
