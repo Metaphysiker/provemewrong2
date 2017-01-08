@@ -6,11 +6,8 @@
 
 <textarea type="text" class="form-control" rows="9" required
           name="argumentation_content" ng-model="argumentation.content"></textarea>
-<div class="lead text-justify white-space-pre-line">
-    {{ argumentation.content }}
-</div>
+<div class="lead text-justify white-space-pre-line" ng-bind-html="argumentation.content"></div>
 
 <h3 class="display-3">By {{ argumentation.owner }}</h3>
 
 <br>
-

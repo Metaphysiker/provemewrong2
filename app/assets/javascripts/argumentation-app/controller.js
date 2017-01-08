@@ -120,19 +120,6 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
         return firstargument;
     };
 
-    $scope.linkmaker = function(haystack) {
-        needle = /dolores|versus/i;
-        haystack = haystack || "";
-        haystack = $sanitize(haystack);
-        if(!needle) {
-            return $sce.trustAsHtml(haystack);
-        }
-        //needle = needle.replace(/\s/g, "|");
-        return $sce.trustAsHtml(haystack.replace(new RegExp(needle, "gi"), function(match) {
-            return '<a href="http://www.w3schools.com">Visit W3Schools</a>';
-        }));
-    };
-
 }]);
 
 app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$sce', function($scope, $http, $timeout, $sce){
