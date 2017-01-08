@@ -56,16 +56,16 @@ class ArgumentationsController < ApplicationController
 
       if argument["id"] == 0
         Argument.create!(
-                    title: argument["title"],
-                    content: argument["content"],
+                    title: ActionController::Base.helpers.sanitize(argument["title"]),
+                    content: ActionController::Base.helpers.sanitize(argument["content"]),
                     place: argument["place"],
                     argumentation_id: argumentation.id
         )
       else
         argumentu = Argument.find(argument["id"])
         argument_params = ActionController::Parameters.new({
-                                                               title: argument["title"],
-                                                               content:  argument["content"],
+                                                               title: ActionController::Base.helpers.sanitize(argument["title"]),
+                                                               content:  ActionController::Base.helpers.sanitize(argument["content"]),
                                                                place: argument["place"]
                                                            })
         argumentu.update(argument_params.permit(:title, :content, :place))

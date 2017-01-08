@@ -2,7 +2,8 @@ var app = angular.module(
     'ArgumentationController',[
         'ngRoute',
         'templates',
-        'ngAnimate'
+        'ngAnimate',
+        'ngSanitize'
     ]);
 
 app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParams', function($scope, $timeout, $q, $routeParams){
@@ -27,7 +28,7 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
     };
 }]);
 
-app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', '$sce', function($scope, $http, $timeout, $sce){
+app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', '$sce', '$sanitize', function($scope, $http, $timeout, $sce, $sanitize){
     //all variables
     $scope.page = 0;
     $scope.keywords = "";
@@ -75,7 +76,8 @@ app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', '
         }, 1000);
     };
 
-    $scope.highlight = function(haystack, needle) {
+    $scope.highlight = function(haystack, needle){
+        haystack = $sanitize(haystack);
         if(!needle) {
             return $sce.trustAsHtml(haystack);
         }
@@ -87,7 +89,7 @@ app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', '
 
 }]);
 
-app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$sce', function($scope, $http, $timeout, $sce){
+app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$sce', '$sanitize', function($scope, $http, $timeout, $sce, $sanitize){
     $scope.argumentations = {};
     $scope.loading = true;
     $http({
@@ -119,8 +121,9 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
     };
 
     $scope.linkmaker = function(haystack) {
-        needle = /terror|versus/i;
+        needle = /dolores|versus/i;
         haystack = haystack || "";
+        haystack = $sanitize(haystack);
         if(!needle) {
             return $sce.trustAsHtml(haystack);
         }
@@ -139,6 +142,7 @@ app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$s
     $scope.selectedArguments = [];
 
     $scope.save = function(){
+        var currentplace = $scope.argumentcontent.place;
         if ($scope.form.$valid) {
             console.log($scope.argumentation);
             $http({
@@ -147,7 +151,7 @@ app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$s
                 data:  $scope.argumentation
             }).then(function successCallback(response) {
                 $scope.argumentation = response.data;
-                console.log($scope.argumentation);
+                $scope.argumentcontent = $scope.getnthargument(response.data, currentplace);
                 $scope.form.$setPristine();
                 $scope.form.$setUntouched();
             });
