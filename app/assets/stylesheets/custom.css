@@ -49,9 +49,13 @@ div.white-space-pre-line {
     transform: translate(0%, -200%);
 }
 
+.come-in-from-up{
+    animation: jumpup-godown 1.3s ease-in-out;
+}
+
 
 .move {
-    transition: all 1.3s ease-in-out;
+    transition: all 1.5s ease-out;
 }
 
 @keyframes jumptoright-goleft {
@@ -69,6 +73,18 @@ div.white-space-pre-line {
 @keyframes jumptoleft-goright {
     0% {
         transform: translate(-200%, 0%);
+    }
+    90% {
+        transform: translate(0%, 0%);
+    }
+    100%{
+        display: none;
+    }
+}
+
+@keyframes jumpup-godown {
+    0% {
+        transform: translate(0%, -200%);
     }
     90% {
         transform: translate(0%, 0%);

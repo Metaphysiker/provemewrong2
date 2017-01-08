@@ -6,7 +6,7 @@ var app = angular.module(
         'ngSanitize'
     ]);
 
-app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParams', function($scope, $timeout, $q, $routeParams){
+app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParams', '$location', function($scope, $timeout, $q, $routeParams, $location){
 
     $scope.argumentationId =  $routeParams.id;
     $scope.startingposition = $routeParams.sp;
@@ -18,7 +18,6 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
         $scope.movingBlock = $scope.startingposition;
     }
 
-    $scope.test = "Test";
     $scope.addTimeOut = function(func, args, time) {
         return $q(function (resolve, reject) {
             setTimeout(function () {
@@ -26,6 +25,26 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
             }, time);
         });
     };
+
+    $scope.goToArgumentation = function(argumentation_id,startingposition, leavingposition, edit){
+        startingposition = startingposition || 1;
+        edit = edit || false;
+        leavingposition = leavingposition || 1;
+
+        $scope.movingBlock = leavingposition;
+
+        $timeout(function(){
+
+            if (edit == true){
+                $location.path("/" + argumentation_id + '/edit').search({"sp": startingposition});
+            } else {
+                $location.path("/" + argumentation_id).search({"sp": startingposition});
+            }
+
+        }, 1500);
+    };
+
+
 }]);
 
 app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', '$sce', '$sanitize', function($scope, $http, $timeout, $sce, $sanitize){
