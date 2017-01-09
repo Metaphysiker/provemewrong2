@@ -26,22 +26,26 @@ div.white-space-pre-line {
 }
 
 .static{
-
+    -webkit-backface-visibility: hidden;
 }
 
 .move-to-right{
+    -webkit-backface-visibility: hidden;
     transform: translate(200%, 0%);
 }
 
 .move-to-left{
+    -webkit-backface-visibility: hidden;
     transform: translate(-200%, 0%);
 }
 
 .come-in-from-left{
+    -webkit-backface-visibility: hidden;
     animation: jumptoleft-goright 1.3s ease-in-out;
 }
 
 .come-in-from-right{
+    -webkit-backface-visibility: hidden;
     animation: jumptoright-goleft 1.3s ease-in-out;
 }
 
@@ -55,17 +59,15 @@ div.white-space-pre-line {
 
 
 .move {
-    transition: all 1.5s ease-in-out;
+    transition: all 1.3s ease-in-out;
 }
 
 @keyframes jumptoright-goleft {
     0% {
         transform: translate(200%, 0%);
     }
-    90% {
+    100% {
         transform: translate(0%, 0%);
-    }
-    100%{
     }
 }
 
@@ -73,10 +75,8 @@ div.white-space-pre-line {
     0% {
         transform: translate(-200%, 0%);
     }
-    90% {
+    100% {
         transform: translate(0%, 0%);
-    }
-    100%{
     }
 }
 

@@ -13,6 +13,7 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
     console.log($scope.startingposition);
     $scope.loading = false;
 
+    console.log($scope.startingposition);
     if ($scope.startingposition == undefined){
         $scope.movingBlock = 1;
     } else {
@@ -35,15 +36,13 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
         $scope.movingBlock = leavingposition;
 
         $timeout(function(){
-
             if (edit == true){
                 $location.path("/" + argumentation_id + '/edit').search({"sp": startingposition});
             } else {
-               // $location.path("/" + argumentation_id).search({"sp": startingposition});
-                window.location.href = 'http://localhost:3000/argumentation#!/' + argumentation_id + '?sp=' + startingposition;
+               $location.path("/" + argumentation_id).search({"sp": startingposition});
+                //window.location.href = 'http://localhost:3000/argumentation#!/' + argumentation_id + '?sp=' + startingposition;
             }
-
-        }, 1500);
+        }, 1300);
     };
 
 
@@ -111,9 +110,8 @@ app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', '
 }]);
 
 app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$sce', '$sanitize', function($scope, $http, $timeout, $sce, $sanitize){
-    console.log($scope.startingposition);
     $scope.argumentations = {};
-    $scope.loading = true;
+    $scope.loading = false;
     $http({
         method: 'GET',
         url: '/argumentations/' + $scope.argumentationId + '.json',
@@ -123,10 +121,8 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
         $scope.argumentcontent = $scope.getnthargument(response.data, 1);
         $scope.loading = false;
         $timeout(function () {
-            console.log($scope.startingposition);
-            $scope.movingBlock = $scope.startingposition + 1;
-            console.log($scope.startingposition);
-        }, 700);
+            $scope.movingBlock = 1;
+        }, 1300);
 
     });
 
