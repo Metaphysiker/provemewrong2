@@ -10,6 +10,7 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
 
     $scope.argumentationId =  $routeParams.id;
     $scope.startingposition = $routeParams.sp;
+    console.log($scope.startingposition);
     $scope.loading = false;
 
     if ($scope.startingposition == undefined){
@@ -38,7 +39,8 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
             if (edit == true){
                 $location.path("/" + argumentation_id + '/edit').search({"sp": startingposition});
             } else {
-                $location.path("/" + argumentation_id).search({"sp": startingposition});
+               // $location.path("/" + argumentation_id).search({"sp": startingposition});
+                window.location.href = 'http://localhost:3000/argumentation#!/' + argumentation_id + '?sp=' + startingposition;
             }
 
         }, 1500);
@@ -109,6 +111,7 @@ app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', '
 }]);
 
 app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$sce', '$sanitize', function($scope, $http, $timeout, $sce, $sanitize){
+    console.log($scope.startingposition);
     $scope.argumentations = {};
     $scope.loading = true;
     $http({
@@ -120,7 +123,9 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
         $scope.argumentcontent = $scope.getnthargument(response.data, 1);
         $scope.loading = false;
         $timeout(function () {
+            console.log($scope.startingposition);
             $scope.movingBlock = $scope.startingposition + 1;
+            console.log($scope.startingposition);
         }, 700);
 
     });
@@ -149,11 +154,11 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
         }
         //needle = needle.replace(/\s/g, "|");
         return $sce.trustAsHtml(haystack.replace(new RegExp(needle, "gi"), function(match) {
-            console.log(match);
-            return '<button ng-click="goToArgumentation(' +  needle.exec(match)[1] + ')" class="btn btn-md btn-info"> ' + needle.exec(match)[2] + '</button>'
+            return '<button ng-click="goToArgumentation(' +  needle.exec(match)[1] + ', 2, 2, false)" class="btn btn-md btn-info"> ' + needle.exec(match)[2] + '</button>'
         }));
     };
 }]);
+
 
 app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$sce', function($scope, $http, $timeout, $sce){
 

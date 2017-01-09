@@ -55,7 +55,7 @@ div.white-space-pre-line {
 
 
 .move {
-    transition: all 1.5s ease-out;
+    transition: all 1.5s ease-in-out;
 }
 
 @keyframes jumptoright-goleft {
@@ -66,7 +66,6 @@ div.white-space-pre-line {
         transform: translate(0%, 0%);
     }
     100%{
-        display: none;
     }
 }
 
@@ -78,7 +77,6 @@ div.white-space-pre-line {
         transform: translate(0%, 0%);
     }
     100%{
-        display: none;
     }
 }
 
@@ -90,7 +88,6 @@ div.white-space-pre-line {
         transform: translate(0%, 0%);
     }
     100%{
-        display: none;
     }
 }
 
