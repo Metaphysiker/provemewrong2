@@ -3,16 +3,16 @@ angular.module(
     "$routeProvider",
     function($routeProvider) {
         $routeProvider.when("/overview/",{
-            templateUrl: "argumentation/overview.html"
+            templateUrl: "argumentation1/overview.html"
         }).when("/search",{
-            controller: "MovingBlockController",
-            templateUrl: "argumentation/search.html"
+            controller: "mainArgumentationController",
+            templateUrl: "argumentation1/search.html"
         }).when("/:id",{
-            controller: "MovingBlockController",
+            controller: "mainArgumentationController",
             templateUrl: "argumentation/show.html"
         }).when("/:id/edit",{
-            controller: "MovingBlockController",
-            templateUrl: "argumentation/edit.html"
+            controller: "mainArgumentationController",
+            templateUrl: "argumentation1/edit.html"
         });
     }
 ]);

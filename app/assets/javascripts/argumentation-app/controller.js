@@ -6,6 +6,21 @@ var app = angular.module(
         'ngSanitize'
     ]);
 
+app.controller("mainArgumentationController", ['$scope','$routeParams', function($scope, $routeParams){
+    $scope.argumentationId =  $routeParams.id;
+    $scope.startingposition = $routeParams.sp;
+    $scope.loading = false;
+    $scope.page = 0;
+    $scope.keywords = "";
+    $scope.argumentations = [{title: "Please type in a word!"}];
+    $scope.highlightterm = "";
+    $scope.argumentations = {};
+    $scope.switchmode = false;
+    $scope.deletemode = false;
+    $scope.selectedArguments = [];
+
+}]);
+
 app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParams', '$location', function($scope, $timeout, $q, $routeParams, $location){
 
     $scope.argumentationId =  $routeParams.id;
@@ -140,7 +155,7 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
     };
 
     $scope.buttonmaker = function(haystack) {
-        //needle = /argumentation-link_to\((\d+)\)/i;
+        //needle = /argumentation1-link_to\((\d+)\)/i;
         needle = /argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/;
         haystack = haystack || "";
         haystack = $sanitize(haystack);
@@ -183,9 +198,9 @@ app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$s
         console.log($scope.movingBlock);
         $scope.movingBlock = 4;
         console.log($scope.movingBlock);
-        //var length = $scope.argumentation.arguments.length;
-        //$scope.argumentation.arguments.push({title: "Lorem Ipsum", content: "Dolores Faceres esse aut", place: length + 1, id: 0});
-        //$scope.argumentcontent = $scope.getnthargument($scope.argumentation, length + 1);
+        //var length = $scope.argumentation1.arguments.length;
+        //$scope.argumentation1.arguments.push({title: "Lorem Ipsum", content: "Dolores Faceres esse aut", place: length + 1, id: 0});
+        //$scope.argumentcontent = $scope.getnthargument($scope.argumentation1, length + 1);
         //$scope.form.$setDirty();
     };
 

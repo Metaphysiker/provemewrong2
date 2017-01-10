@@ -1,3 +1,9 @@
-Userpanel here
+<get-argumentation></get-argumentation>
 
-<div show-argumentation></div>
+<section class="move" ng-class="{'static': movingBlock == 1, 'move-to-right': movingBlock == 2, 'move-to-left': movingBlock == 3}">
+    <view-argumentation-top></view-argumentation-top>
+        <div class="row">
+            <view-argumentation-sidebar></view-argumentation-sidebar>
+            <view-argumentation-arguments></view-argumentation-arguments>
+        </div>
+</section>

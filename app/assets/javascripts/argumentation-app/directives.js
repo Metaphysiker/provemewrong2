@@ -3,21 +3,21 @@ app = angular.module(
 
 app.directive('searchArgumentation', function() {
     return {
-        templateUrl: "argumentation/searchelements/searchargumentation.html",
+        templateUrl: "argumentation1/searchelements/searchargumentation.html",
         controller: "ArgumentationSearchController"
     };
 });
 
 app.directive('showArgumentation', function() {
     return {
-        templateUrl: "argumentation/showelements/showargumentation.html",
+        templateUrl: "argumentation1/showelements/showargumentation.html",
         controller: "ArgumentationShowController"
     };
 });
 
 app.directive('editArgumentation', function() {
     return {
-        templateUrl: "argumentation/editelements/editargumentation.html",
+        templateUrl: "argumentation1/editelements/editargumentation.html",
         controller: "ArgumentationEditController"
     };
 });
@@ -58,8 +58,77 @@ app.directive("goToArgumentationButton",['$location', '$timeout', function($loca
             }
 
         },
-        templateUrl:"argumentation/showelements/gotoargumentation.html"
+        templateUrl:"argumentation1/showelements/gotoargumentation.html"
 
     };
 
+}]);
+
+app.directive("viewArgumentationTop",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/view_elements/top.html"
+    };
+
+}]);
+
+
+app.directive("viewArgumentationSidebar",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/view_elements/sidebar.html"
+    };
+
+}]);
+
+app.directive("viewArgumentationArguments",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/view_elements/arguments.html"
+    };
+
+}]);
+
+app.directive("getArgumentation",['$location','$http', '$timeout', function($location, $http, $timeout){
+
+    return {
+        link: function(scope, element, attr)
+        {
+            if (scope.startingposition == undefined){
+                scope.movingBlock = 1;
+            } else {
+                scope.movingBlock = scope.startingposition;
+            }
+
+            scope.loading = true;
+            $http({
+                method: 'GET',
+                url: '/argumentations/' + scope.argumentationId + '.json',
+                params: {id: scope.argumentationId}
+            }).then(function successCallback(response) {
+                scope.argumentation = response.data;
+                scope.argumentcontent = scope.getnthargument(response.data, 1);
+               // scope.argumentcontent = scope.argumentation.arguments[0];
+                scope.loading = false;
+                $timeout(function () {
+                    scope.movingBlock = 1;
+                }, 1300);
+
+            });
+
+            scope.getcontent = function(argument){
+                scope.argumentcontent = argument;
+            };
+
+            scope.getnthargument = function(argumentation, place){
+                var nthargument = {};
+                for (var i = 0; i < argumentation.arguments.length; i++) {
+                    if(argumentation.arguments[i].place == place) {
+                        nthargument = argumentation.arguments[i];
+                    }
+                }
+                return nthargument;
+            };
+        }
+    };
 }]);
