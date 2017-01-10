@@ -2,4 +2,5 @@ asset 'angular'
 asset 'angular-route'
 asset 'angular-animate'
 asset 'angular-sanitize'
+asset 'angular-translate'
 asset "sweetalert"

@@ -8946,7 +8946,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
      * Looks for directives on the given node and adds them to the directive collection which is
      * sorted.
      *
-     * @param node Node to searddch.
+     * @param node Node to search.
      * @param directives An array to which the directives are added to. This array is sorted before
      *        the function returns.
      * @param attrs The shared attrs object which is used to populate the normalized attributes.
@@ -13540,7 +13540,7 @@ var locationPrototype = {
    *
    * Return URL (e.g. `/path?a=b#hash`) when called without any parameter.
    *
-   * Change path, searddch and hash, when called with parameter and return `$location`.
+   * Change path, search and hash, when called with parameter and return `$location`.
    *
    *
    * ```js
@@ -13669,34 +13669,34 @@ var locationPrototype = {
    * @description
    * This method is getter / setter.
    *
-   * Return searddch part (as object) of current URL when called without any parameter.
+   * Return search part (as object) of current URL when called without any parameter.
    *
-   * Change searddch part when called with parameter and return `$location`.
+   * Change search part when called with parameter and return `$location`.
    *
    *
    * ```js
    * // given URL http://example.com/#/some/path?foo=bar&baz=xoxo
-   * var searchObject = $location.searddch();
+   * var searchObject = $location.search();
    * // => {foo: 'bar', baz: 'xoxo'}
    *
    * // set foo to 'yipee'
-   * $location.searddch('foo', 'yipee');
-   * // $location.searddch() => {foo: 'yipee', baz: 'xoxo'}
+   * $location.search('foo', 'yipee');
+   * // $location.search() => {foo: 'yipee', baz: 'xoxo'}
    * ```
    *
-   * @param {string|Object.<string>|Object.<Array.<string>>} search New searddch params - string or
+   * @param {string|Object.<string>|Object.<Array.<string>>} search New search params - string or
    * hash object.
    *
-   * When called with a single argument the method acts as a setter, setting the `searddch` component
+   * When called with a single argument the method acts as a setter, setting the `search` component
    * of `$location` to the specified value.
    *
    * If the argument is a hash object containing an array of values, these values will be encoded
-   * as duplicate searddch parameters in the URL.
+   * as duplicate search parameters in the URL.
    *
-   * @param {(string|Number|Array<string>|boolean)=} paramValue If `searddch` is a string or number, then `paramValue`
-   * will override only a single searddch property.
+   * @param {(string|Number|Array<string>|boolean)=} paramValue If `search` is a string or number, then `paramValue`
+   * will override only a single search property.
    *
-   * If `paramValue` is an array, it will override the property of the `searddch` component of
+   * If `paramValue` is an array, it will override the property of the `search` component of
    * `$location` specified via the first argument.
    *
    * If `paramValue` is `null`, the property specified via the first argument will be deleted.
@@ -13704,7 +13704,7 @@ var locationPrototype = {
    * If `paramValue` is `true`, the property specified via the first argument will be added with no
    * value nor trailing equal sign.
    *
-   * @return {Object} If called with no arguments returns the parsed `searddch` object. If called with
+   * @return {Object} If called with no arguments returns the parsed `search` object. If called with
    * one or more arguments returns `$location` object itself.
    */
   search: function(search, paramValue) {
@@ -13725,7 +13725,7 @@ var locationPrototype = {
           this.$$search = search;
         } else {
           throw $locationMinErr('isrcharg',
-              'The first argument of the `$location#searddch()` call must be a string or an object.');
+              'The first argument of the `$location#search()` call must be a string or an object.');
         }
         break;
       default:
@@ -13862,7 +13862,7 @@ function locationGetterSetter(property, preprocess) {
  *   - Changes the address bar.
  *   - Clicks the back or forward button (or clicks a History link).
  *   - Clicks on a link.
- * - Represents the URL object as a set of methods (protocol, host, port, path, searddch, hash).
+ * - Represents the URL object as a set of methods (protocol, host, port, path, search, hash).
  *
  * For more information see {@link guide/$location Developer Guide: Using $location}
  */
@@ -13888,7 +13888,7 @@ function $LocationProvider() {
    * @name $locationProvider#hashPrefix
    * @description
    * The default value for the prefix is `'!'`.
-   * @param {string=} prefix Prefix for hash part (containing path and searddch)
+   * @param {string=} prefix Prefix for hash part (containing path and search)
    * @returns {*} current value if used as getter or itself (chaining) if used as setter
    */
   this.hashPrefix = function(prefix) {
@@ -19766,7 +19766,7 @@ function $$TestabilityProvider() {
      * Returns an array of elements that are bound (via ng-bind or {{}})
      * to expressions matching the input.
      *
-     * @param {Element} element The element root to searddch from.
+     * @param {Element} element The element root to search from.
      * @param {string} expression The binding expression to match.
      * @param {boolean} opt_exactMatch If true, only returns exact matches
      *     for the expression. Filters and whitespace are ignored.
@@ -19801,7 +19801,7 @@ function $$TestabilityProvider() {
      * Returns an array of elements that are two-way found via ng-model to
      * expressions matching the input.
      *
-     * @param {Element} element The element root to searddch from.
+     * @param {Element} element The element root to search from.
      * @param {string} expression The model expression to match.
      * @param {boolean} opt_exactMatch If true, only returns exact matches
      *     for the expression.
@@ -19823,7 +19823,7 @@ function $$TestabilityProvider() {
      *
      * @description
      * Shortcut for getting the location in a browser agnostic way. Returns
-     *     the path, searddch, and hash. (e.g. /path?a=b#hash)
+     *     the path, search, and hash. (e.g. /path?a=b#hash)
      */
     testability.getLocation = function() {
       return $location.url();
@@ -19835,7 +19835,7 @@ function $$TestabilityProvider() {
      * @description
      * Shortcut for navigating to a location without doing a full page reload.
      *
-     * @param {string} url The location url (path, searddch and hash,
+     * @param {string} url The location url (path, search and hash,
      *     e.g. /path?a=b#hash) to go to.
      */
     testability.setLocation = function(url) {
@@ -20007,7 +20007,7 @@ var originUrl = urlResolve(window.location.href);
  *   | href          | A normalized version of the provided URL if it was not an absolute URL |
  *   | protocol      | The protocol including the trailing colon                              |
  *   | host          | The host and port (if the port is non-default) of the normalizedUrl    |
- *   | searddch        | The searddch params, minus the question mark                             |
+ *   | search        | The search params, minus the question mark                             |
  *   | hash          | The hash string, minus the hash symbol
  *   | hostname      | The hostname
  *   | port          | The port, without ":"
@@ -25163,8 +25163,8 @@ function checkboxInputType(scope, element, attr, ctrl, $sniffer, $browser, $filt
  *    If the expression evaluates to a string, then it will be converted to a RegExp
  *    after wrapping it in `^` and `$` characters. For instance, `"abc"` will be converted to
  *    `new RegExp('^abc$')`.<br />
- *    **Note:** Avoid using the `g` flag on the RegExp, as it will cause each successive searddch to
- *    start at the index of the last searddch's match, thus not taking the whole input value into
+ *    **Note:** Avoid using the `g` flag on the RegExp, as it will cause each successive search to
+ *    start at the index of the last search's match, thus not taking the whole input value into
  *    account.
  * @param {string=} ngChange Angular expression to be executed when input changes due to user
  *    interaction with the input element.
@@ -32448,7 +32448,7 @@ var optionDirective = ['$interpolate', function($interpolate) {
       }
 
       return function(scope, element, attr) {
-        // This is an optimization over using ^^ since we don't want to have to searddch
+        // This is an optimization over using ^^ since we don't want to have to search
         // all the way to the root of the DOM for every single option element
         var selectCtrlName = '$selectController',
             parent = element.parent(),

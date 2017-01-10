@@ -339,3 +339,21 @@ app.directive("getGoToArgumentationMethod",['$location','$http', '$timeout', fun
         }
     };
 }]);
+
+app.directive("changeLanguageButton",['$location', '$timeout', '$translate', function($location,$timeout, $translate){
+
+    return {
+        restrict: 'E',
+        link: function(scope, element, attr)
+        {
+
+            scope.changeLanguage = function (key) {
+                $translate.use(key);
+            };
+
+        },
+        templateUrl:"argumentation/change_language_button.html"
+
+    };
+
+}]);

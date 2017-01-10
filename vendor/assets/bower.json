@@ -5,6 +5,7 @@
     "angular-route": "latest",
     "angular-animate": "latest",
     "angular-sanitize": "latest",
+    "angular-translate": "latest",
     "sweetalert": "latest"
   }
 }

@@ -15,6 +15,7 @@
 //= require sweetalert
 //= require sweetalert-dev
 //= require angular
+//= require angular-translate
 //= require angular-route
 //= require angular-rails-templates
 //= require angular-animate

@@ -3,10 +3,11 @@ var app = angular.module(
         'ngRoute',
         'templates',
         'ngAnimate',
-        'ngSanitize'
+        'ngSanitize',
+        'pascalprecht.translate'
     ]);
 
-app.controller("mainArgumentationController", ['$scope','$routeParams', function($scope, $routeParams){
+app.controller("mainArgumentationController", ['$scope','$routeParams', '$translate', function($scope, $routeParams, $translate){
     $scope.argumentationId =  $routeParams.id;
     $scope.startingposition = $routeParams.sp;
     $scope.loading = false;
