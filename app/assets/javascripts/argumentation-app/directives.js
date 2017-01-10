@@ -148,6 +148,7 @@ app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', func
         link: function(scope, element, attr)
         {
             scope.search = function(keywords, direction){
+                sweetAlert("Oops...", "Something went wrong!", "error");
                 scope.highlightterm = keywords;
                 scope.loading = true;
                 if (scope.keywords != scope.oldkeywords){

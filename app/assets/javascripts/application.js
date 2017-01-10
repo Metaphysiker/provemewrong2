@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require sweetalert
+//= require sweetalert-dev
 //= require angular
 //= require angular-route
 //= require angular-rails-templates
