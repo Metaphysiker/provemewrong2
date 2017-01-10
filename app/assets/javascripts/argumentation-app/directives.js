@@ -64,30 +64,7 @@ app.directive("goToArgumentationButton",['$location', '$timeout', function($loca
 
 }]);
 
-app.directive("viewArgumentationTop",['$location', '$timeout', function($location,$timeout){
 
-    return {
-        templateUrl:"argumentation/view_elements/top.html"
-    };
-
-}]);
-
-
-app.directive("viewArgumentationSidebar",['$location', '$timeout', function($location,$timeout){
-
-    return {
-        templateUrl:"argumentation/view_elements/sidebar.html"
-    };
-
-}]);
-
-app.directive("viewArgumentationArguments",['$location', '$timeout', function($location,$timeout){
-
-    return {
-        templateUrl:"argumentation/view_elements/arguments.html"
-    };
-
-}]);
 
 app.directive("getArgumentation",['$location','$http', '$timeout', function($location, $http, $timeout){
 
@@ -101,6 +78,7 @@ app.directive("getArgumentation",['$location','$http', '$timeout', function($loc
             }
 
             scope.loading = true;
+
             $http({
                 method: 'GET',
                 url: '/argumentations/' + scope.argumentationId + '.json',
