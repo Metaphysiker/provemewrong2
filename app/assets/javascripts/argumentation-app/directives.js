@@ -147,14 +147,13 @@ app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', func
     return {
         link: function(scope, element, attr)
         {
-            scope.search = function(keywords, movingblock){
+            scope.search = function(keywords, direction){
                 scope.highlightterm = keywords;
                 scope.loading = true;
-
-                if (keywords != scope.keywords){
+                if (scope.keywords != scope.oldkeywords){
                     scope.page = 0;
+                    scope.oldkeywords = scope.keywords
                 }
-                scope.keywords = keywords;
 
                 $http({
                     method: 'POST',
@@ -164,7 +163,7 @@ app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', func
                     scope.argumentations = response.data;
                     scope.loading = false;
                     $timeout(function () {
-                        scope.movingBlock = movingblock;
+                        scope.movingBlock = direction;
                     }, 700);
 
                 });
@@ -175,16 +174,16 @@ app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', func
                     scope.movingBlock = 2;
                     scope.page = scope.page - 1;
                     $timeout(function () {
-                        scope.search(scope.keywords, 3);
+                        scope.search(scope.keywords, 5);
                     }, 1000);
                 }
             };
 
             scope.nextPage = function() {
-                scope.movingBlock = 4;
+                scope.movingBlock = 3;
                 scope.page = scope.page + 1;
                 $timeout(function () {
-                    scope.search(scope.keywords, 5);
+                    scope.search(scope.keywords, 4);
                 }, 1000);
             };
 

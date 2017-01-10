@@ -3,7 +3,7 @@
         <li class="previous" ng-if="page > 0">
             <a href="" ng-click="previousPage()">&larr; Previous</a>
         </li>
-        <li class="next">
+        <li class="next" ng-if="argumentations.length == argumentations[0].limit">
             <a href="" ng-click="nextPage()">Next &rarr;</a>
         </li>
     </ul>

@@ -12,7 +12,8 @@ app.controller("mainArgumentationController", ['$scope','$routeParams', function
     $scope.loading = false;
     $scope.page = 0;
     $scope.keywords = "";
-    $scope.argumentations = [{title: "Please type in a word!"}];
+    $scope.oldkeywords = "";
+    $scope.argumentations = [];
     $scope.highlightterm = "";
     $scope.argumentations = {};
     $scope.switchmode = false;

@@ -16,6 +16,7 @@ class ImportantBits
     both = both.offset(@offset).limit(@limit)
     Rails::logger.debug both.inspect
     @final_results = get_modified_array_of_search_results(both)
+
   end
 
   private
@@ -25,7 +26,7 @@ class ImportantBits
     final_array = []
 
     argumentations.each do |argumentation|
-      argumentation_hash = {title: argumentation.title, id: argumentation.id, owner: argumentation.user.email, arguments: []}
+      argumentation_hash = {title: argumentation.title, id: argumentation.id, owner: argumentation.user.email, limit: @limit, arguments: []}
 
       argumentation_hash[:bits] = get_important_sentences(nil, argumentation.content)
 
@@ -34,6 +35,9 @@ class ImportantBits
       end
       final_array.push(argumentation_hash)
     end
+
+    return [{title: "Sorry!", bits: ["No Results Were Found!"]}] if final_array.empty?
+
     return final_array
   end
 
