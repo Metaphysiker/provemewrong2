@@ -10,10 +10,8 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
 
     $scope.argumentationId =  $routeParams.id;
     $scope.startingposition = $routeParams.sp;
-    console.log($scope.startingposition);
     $scope.loading = false;
 
-    console.log($scope.startingposition);
     if ($scope.startingposition == undefined){
         $scope.movingBlock = 1;
     } else {
@@ -32,9 +30,9 @@ app.controller("MovingBlockController", ['$scope','$timeout', '$q', '$routeParam
         startingposition = startingposition || 1;
         edit = edit || false;
         leavingposition = leavingposition || 1;
-
+        console.log($scope.movingBlock);
         $scope.movingBlock = leavingposition;
-
+        console.log($scope.movingBlock);
         $timeout(function(){
             if (edit == true){
                 $location.path("/" + argumentation_id + '/edit').search({"sp": startingposition});
@@ -111,7 +109,7 @@ app.controller("ArgumentationSearchController",['$scope', '$http', '$timeout', '
 
 app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$sce', '$sanitize', function($scope, $http, $timeout, $sce, $sanitize){
     $scope.argumentations = {};
-    $scope.loading = false;
+    $scope.loading = true;
     $http({
         method: 'GET',
         url: '/argumentations/' + $scope.argumentationId + '.json',
@@ -122,10 +120,11 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
         $scope.loading = false;
         $timeout(function () {
             $scope.movingBlock = 1;
+            console.log($scope.movingBlock);
         }, 1300);
 
     });
-
+    console.log($scope.movingBlock);
     $scope.getcontent = function(argument){
         $scope.argumentcontent = argument;
     };
@@ -150,7 +149,7 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
         }
         //needle = needle.replace(/\s/g, "|");
         return $sce.trustAsHtml(haystack.replace(new RegExp(needle, "gi"), function(match) {
-            return '<button ng-click="goToArgumentation(' +  needle.exec(match)[1] + ', 2, 2, false)" class="btn btn-md btn-info"> ' + needle.exec(match)[2] + '</button>'
+            return '<button ng-click="goToArgumentation(' +  needle.exec(match)[1] + ', 2, 4, false)" class="btn btn-md btn-info"> ' + needle.exec(match)[2] + '</button>'
         }));
     };
 }]);
@@ -158,14 +157,15 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
 
 app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$sce', function($scope, $http, $timeout, $sce){
 
+    console.log($scope.movingBlock);
     $scope.switchmode = false;
     $scope.deletemode = false;
     $scope.selectedArguments = [];
+    console.log($scope.movingBlock);
 
     $scope.save = function(){
         var currentplace = $scope.argumentcontent.place;
         if ($scope.form.$valid) {
-            console.log($scope.argumentation);
             $http({
                 method: 'PUT',
                 url: '/argumentations/' + $scope.argumentationId + '.json',
@@ -180,11 +180,13 @@ app.controller("ArgumentationEditController", ['$scope','$http', '$timeout', '$s
     };
 
     $scope.addArgument = function(){
-
-        var length = $scope.argumentation.arguments.length;
-        $scope.argumentation.arguments.push({title: "Lorem Ipsum", content: "Dolores Faceres esse aut", place: length + 1, id: 0});
-        $scope.argumentcontent = $scope.getnthargument($scope.argumentation, length + 1);
-        $scope.form.$setDirty();
+        console.log($scope.movingBlock);
+        $scope.movingBlock = 4;
+        console.log($scope.movingBlock);
+        //var length = $scope.argumentation.arguments.length;
+        //$scope.argumentation.arguments.push({title: "Lorem Ipsum", content: "Dolores Faceres esse aut", place: length + 1, id: 0});
+        //$scope.argumentcontent = $scope.getnthargument($scope.argumentation, length + 1);
+        //$scope.form.$setDirty();
     };
 
     $scope.toggleSelectionForDeletion = function(argument){

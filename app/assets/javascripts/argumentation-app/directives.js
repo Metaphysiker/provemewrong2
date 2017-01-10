@@ -35,3 +35,31 @@ app.directive('compileTemplate', function($compile, $parse){
         }
     }
 });
+
+app.directive("goToArgumentationButton",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        restrict: 'E',
+        link: function(scope, element, attr)
+        {
+            scope.alertbody = function()
+            {
+                console.log("First log: " + scope.movingBlock);
+                //window.location.href = 'http://localhost:3000/argumentation#!/80';
+
+                scope.$parent.movingBlock = 2;
+
+                console.log("Second log: " + scope.movingBlock);
+
+                //$timeout(function(){
+                //    $location.path("/" + 80).search({"sp": 2});
+                //}, 1300);
+
+            }
+
+        },
+        templateUrl:"argumentation/showelements/gotoargumentation.html"
+
+    };
+
+}]);
