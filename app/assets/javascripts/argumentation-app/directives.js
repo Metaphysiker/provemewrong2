@@ -66,7 +66,7 @@ app.directive("goToArgumentationButton",['$location', '$timeout', function($loca
 
 
 
-app.directive("getArgumentation",['$location','$http', '$timeout', function($location, $http, $timeout){
+app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', function($location, $http, $timeout, $sce){
 
     return {
         link: function(scope, element, attr)
@@ -106,6 +106,96 @@ app.directive("getArgumentation",['$location','$http', '$timeout', function($loc
                     }
                 }
                 return nthargument;
+            };
+
+            scope.buttonmaker = function(haystack) {
+                //needle = /argumentation-link_to\((\d+)\)/i;
+                needle = /argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/;
+                haystack = haystack || "";
+                if(!needle) {
+                    return $sce.trustAsHtml(haystack);
+                }
+                //needle = needle.replace(/\s/g, "|");
+                return $sce.trustAsHtml(haystack.replace(new RegExp(needle, "gi"), function(match) {
+                    return '<button ng-click="goToArgumentation(' +  needle.exec(match)[1] + ', 2, 3, false)" class="btn btn-md btn-info"> ' + needle.exec(match)[2] + '</button>'
+                }));
+            };
+
+            scope.goToArgumentation = function(argumentation_id,startingposition, leavingposition, edit){
+                startingposition = startingposition || 1;
+                edit = edit || false;
+                leavingposition = leavingposition || 1;
+                console.log(scope.movingBlock);
+                scope.movingBlock = leavingposition;
+                console.log(scope.movingBlock);
+                $timeout(function(){
+                    if (edit == true){
+                        $location.path("/" + argumentation_id + '/edit').search({"sp": startingposition});
+                    } else {
+                        $location.path("/" + argumentation_id).search({"sp": startingposition});
+                        //window.location.href = 'http://localhost:3000/argumentation#!/' + argumentation_id + '?sp=' + startingposition;
+                    }
+                }, 1300);
+            };
+
+        }
+    };
+}]);
+
+app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', function($location, $http, $timeout, $sce){
+
+    return {
+        link: function(scope, element, attr)
+        {
+            scope.search = function(keywords, movingblock){
+                scope.highlightterm = keywords;
+                scope.loading = true;
+
+                if (keywords != scope.keywords){
+                    scope.page = 0;
+                }
+                scope.keywords = keywords;
+
+                $http({
+                    method: 'POST',
+                    url: '/search.json',
+                    params: {keywords: scope.keywords, page: scope.page}
+                }).then(function successCallback(response) {
+                    scope.argumentations = response.data;
+                    scope.loading = false;
+                    $timeout(function () {
+                        scope.movingBlock = movingblock;
+                    }, 700);
+
+                });
+            };
+
+            scope.previousPage = function() {
+                if (scope.page > 0) {
+                    scope.movingBlock = 2;
+                    scope.page = scope.page - 1;
+                    $timeout(function () {
+                        scope.search(scope.keywords, 3);
+                    }, 1000);
+                }
+            };
+
+            scope.nextPage = function() {
+                scope.movingBlock = 4;
+                scope.page = scope.page + 1;
+                $timeout(function () {
+                    scope.search(scope.keywords, 5);
+                }, 1000);
+            };
+
+            scope.highlight = function(haystack, needle){
+                if(!needle) {
+                    return $sce.trustAsHtml(haystack);
+                }
+                needle = needle.replace(/\s/g, "|");
+                return $sce.trustAsHtml(haystack.replace(new RegExp(needle, "gi"), function(match) {
+                    return '<span class="highlightedText">' + match + '</span>';
+                }));
             };
         }
     };
@@ -224,6 +314,28 @@ app.directive("getEditMethods",['$location','$http', function($location, $http){
                 }
             };
 
+        }
+    };
+}]);
+
+app.directive("getGoToArgumentationMethod",['$location','$http', '$timeout', function($location, $http, $timeout){
+
+    return {
+        link: function(scope, element, attr)
+        {
+            scope.goToArgumentation = function(argumentation_id,startingposition, leavingposition, edit){
+                startingposition = startingposition || 1;
+                edit = edit || false;
+                leavingposition = leavingposition || 1;
+                scope.movingBlock = leavingposition;
+                $timeout(function(){
+                    if (edit == true){
+                        $location.path("/" + argumentation_id + '/edit').search({"sp": startingposition});
+                    } else {
+                        $location.path("/" + argumentation_id).search({"sp": startingposition});
+                    }
+                }, 1300);
+            };
         }
     };
 }]);

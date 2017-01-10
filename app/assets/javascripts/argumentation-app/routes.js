@@ -3,10 +3,10 @@ angular.module(
     "$routeProvider",
     function($routeProvider) {
         $routeProvider.when("/overview/",{
-            templateUrl: "argumentation1/overview.html"
+            templateUrl: "argumentation/overview.html"
         }).when("/search",{
             controller: "mainArgumentationController",
-            templateUrl: "argumentation1/search.html"
+            templateUrl: "argumentation/search.html"
         }).when("/:id",{
             controller: "mainArgumentationController",
             templateUrl: "argumentation/show.html"

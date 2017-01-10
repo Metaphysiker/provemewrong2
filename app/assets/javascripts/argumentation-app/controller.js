@@ -158,7 +158,6 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
         //needle = /argumentation1-link_to\((\d+)\)/i;
         needle = /argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/;
         haystack = haystack || "";
-        haystack = $sanitize(haystack);
         if(!needle) {
             return $sce.trustAsHtml(haystack);
         }

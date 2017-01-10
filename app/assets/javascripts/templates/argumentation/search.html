@@ -1,0 +1,24 @@
+<get-argumentations></get-argumentations>
+<get-go-to-argumentation-method></get-go-to-argumentation-method>
+
+<search-form></search-form>
+
+<loading-bar></loading-bar>
+
+<div class="animate-if" ng-if="loading == false">
+    <section class="move" ng-class="{'static': movingBlock == 1, 'move-to-right': movingBlock == 2, 'move-to-left': movingBlock == 3}">
+
+        <div ng-if="argumentations.length > 0">
+            <search-nav></search-nav>
+
+            <search-results></search-results>
+
+            <search-nav></search-nav>
+        </div>
+
+        <div ng-if="argumentations.length == 0">
+            No results were found!
+        </div>
+
+    </section>
+</div>

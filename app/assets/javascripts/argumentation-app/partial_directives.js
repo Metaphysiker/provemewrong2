@@ -72,3 +72,27 @@ app.directive("editArgumentationArguments",['$location', '$timeout', function($l
     };
 
 }]);
+
+app.directive("searchForm",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/search_elements/form.html"
+    };
+
+}]);
+
+app.directive("searchNav",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/search_elements/nav.html"
+    };
+
+}]);
+
+app.directive("searchResults",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/search_elements/results.html"
+    };
+
+}]);
