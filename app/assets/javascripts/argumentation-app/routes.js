@@ -12,7 +12,7 @@ angular.module(
             templateUrl: "argumentation/show.html"
         }).when("/:id/edit",{
             controller: "mainArgumentationController",
-            templateUrl: "argumentation1/edit.html"
+            templateUrl: "argumentation/edit.html"
         });
     }
 ]);

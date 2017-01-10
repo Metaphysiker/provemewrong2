@@ -32,3 +32,43 @@ app.directive("loadingBar",['$location', '$timeout', function($location,$timeout
     };
 
 }]);
+
+app.directive("argumentationContent",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/view_elements/argumentation_content.html"
+    };
+
+}]);
+
+app.directive("argumentContentContent",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/view_elements/argument_content_content.html"
+    };
+
+}]);
+
+app.directive("editArgumentationTop",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/edit_elements/top.html"
+    };
+
+}]);
+
+app.directive("editArgumentationSidebar",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/edit_elements/sidebar.html"
+    };
+
+}]);
+
+app.directive("editArgumentationArguments",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/edit_elements/arguments.html"
+    };
+
+}]);
