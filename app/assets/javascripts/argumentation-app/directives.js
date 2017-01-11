@@ -148,7 +148,6 @@ app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', func
         link: function(scope, element, attr)
         {
             scope.search = function(keywords, direction){
-                sweetAlert("Oops...", "Something went wrong!", "error");
                 scope.highlightterm = keywords;
                 scope.loading = true;
                 if (scope.keywords != scope.oldkeywords){
@@ -201,7 +200,7 @@ app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', func
     };
 }]);
 
-app.directive("getEditMethods",['$location','$http', function($location, $http){
+app.directive("getEditMethods",['$location','$http', '$filter', function($location, $http, $filter){
 
     return {
         link: function(scope, element, attr)
@@ -215,6 +214,8 @@ app.directive("getEditMethods",['$location','$http', function($location, $http){
                         url: '/argumentations/' + scope.argumentationId + '.json',
                         data:  scope.argumentation
                     }).then(function successCallback(response) {
+                        var swalmessage = $filter('translate')('SAVED');
+                        swal( swalmessage, "", "success");
                         scope.argumentation = response.data;
                         scope.argumentcontent = scope.getnthargument(response.data, currentplace);
                         scope.form.$setPristine();
@@ -224,6 +225,9 @@ app.directive("getEditMethods",['$location','$http', function($location, $http){
             };
 
             scope.addArgument = function(){
+
+                var swalmessage = $filter('translate')('ADDED_ARGUMENT');
+                swal( swalmessage, "", "success");
                 var length = scope.argumentation.arguments.length;
                 scope.argumentation.arguments.push({title: "Lorem Ipsum", content: "Dolores Faceres esse aut", place: length + 1, id: 0});
                 scope.argumentcontent = scope.getnthargument(scope.argumentation, length + 1);
@@ -237,13 +241,35 @@ app.directive("getEditMethods",['$location','$http', function($location, $http){
             scope.destroyArgument = function(){
                 var argument = scope.selectedArgumentToDestroy;
                 var index = scope.argumentation.arguments.indexOf(argument);
+
+                var title = $filter('translate')('DELETE_ALERT_TITLE');
+                var text = $filter('translate')('DELETE_ALERT_TEXT');
+                var confirm = $filter('translate')('DELETE_ALERT_CONFIRM');
+                var cancel = $filter('translate')('DELETE_ALERT_CANCEL');
+
                 if (index > -1) {
-                    var place = argument.place;
-                    scope.argumentation.arguments.splice(index, 1);
-                    scope.reorder_place(place);
-                    scope.argumentcontent = scope.getnthargument(scope.argumentation, place);
-                    scope.form.$setDirty();
-                }
+                swal({
+                        title: title,
+                        text: text,
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: confirm,
+                        closeOnConfirm: false
+                    },
+                    function(){
+                            var place = argument.place;
+                            console.log(argument.place);
+                            scope.argumentation.arguments.splice(index, 1);
+                            scope.reorder_place(place);
+                            scope.argumentcontent = scope.getnthargument(scope.argumentation, 1);
+                            scope.form.$setDirty();
+                            scope.deletemode = false;
+                            var message = $filter('translate')('DELETE_ALERT_DELETED');
+                            swal(message, "", "success");
+
+                    });
+                 }
             };
 
             scope.reorder_place = function(place){
