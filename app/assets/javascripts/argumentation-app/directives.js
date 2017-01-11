@@ -412,6 +412,21 @@ app.directive("myArgumentations",['$location', '$timeout', '$http', function($lo
 
             });
 
+            scope.createArgumentation = function(){
+                $http({
+                    method: 'POST',
+                    url: '/argumentations.json'
+                }).then(function successCallback(response) {
+                    var id = response.data.id;
+                    console.log(id);
+                    scope.movingBlock = 2;
+                    $timeout(function () {
+                        $location.path("/" + id).search({"sp": 3});
+                    }, 700);
+
+                });
+            };
+
         },
         templateUrl:"argumentation/my_argumentations.html"
     };

@@ -29,6 +29,21 @@ class ArgumentationsController < ApplicationController
 
   end
 
+  def create
+    @argumentation = Argumentation.create!(
+        title: "Labore et Dolore",
+        content: "Errare humanum est",
+        user_id: current_user.id
+    )
+
+    Argument.create!(
+        title: "Lorem Ipsum",
+        content: "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+        argumentation_id: @argumentation.id,
+        place: 1
+    )
+  end
+
   def update
     argumentation = Argumentation.find(params[:id])
 
