@@ -20,6 +20,8 @@ app.controller("mainArgumentationController", ['$scope','$routeParams', '$transl
     $scope.switchmode = false;
     $scope.deletemode = false;
     $scope.selectedArguments = [];
+    $scope.selectedArgumentToDestroy = {};
+    $scope.argumentcontent = {};
 
 }]);
 
@@ -137,11 +139,9 @@ app.controller("ArgumentationShowController", ['$scope','$http', '$timeout', '$s
         $scope.loading = false;
         $timeout(function () {
             $scope.movingBlock = 1;
-            console.log($scope.movingBlock);
         }, 1300);
 
     });
-    console.log($scope.movingBlock);
     $scope.getcontent = function(argument){
         $scope.argumentcontent = argument;
     };

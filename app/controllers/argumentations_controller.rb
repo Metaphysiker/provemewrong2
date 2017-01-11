@@ -40,6 +40,10 @@ class ArgumentationsController < ApplicationController
     @argumentation = Argumentation.find(params[:id])
   end
 
+  def myargumentations
+    @argumentations = current_user.argumentations
+  end
+
   private
 
   def updatearguments(argumentation, param_arguments)

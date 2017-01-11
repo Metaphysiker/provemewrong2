@@ -62,7 +62,7 @@
 
                 <div style="text-align: left" ng-if="deletemode == true">
                     <input
-                            ng-model="argumentToDelete"
+                            ng-model="$parent.$parent.argumentToDelete"
                             type="radio"
                             name="{{argument.title}}"
                             value="{{argument}}"

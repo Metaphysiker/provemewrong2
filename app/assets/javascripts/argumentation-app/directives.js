@@ -77,6 +77,12 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', funct
                 scope.movingBlock = scope.startingposition;
             }
 
+            if(/edit/.test($location.$$path)){
+                scope.environment = "edit";
+            } else {
+                scope.environment = "show";
+            }
+
             scope.loading = true;
 
             $http({
@@ -125,9 +131,7 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', funct
                 startingposition = startingposition || 1;
                 edit = edit || false;
                 leavingposition = leavingposition || 1;
-                console.log(scope.movingBlock);
                 scope.movingBlock = leavingposition;
-                console.log(scope.movingBlock);
                 $timeout(function(){
                     if (edit == true){
                         $location.path("/" + argumentation_id + '/edit').search({"sp": startingposition});
@@ -239,37 +243,28 @@ app.directive("getEditMethods",['$location','$http', '$filter', function($locati
             };
 
             scope.destroyArgument = function(){
-                var argument = scope.selectedArgumentToDestroy;
-                var index = scope.argumentation.arguments.indexOf(argument);
 
                 var title = $filter('translate')('DELETE_ALERT_TITLE');
                 var text = $filter('translate')('DELETE_ALERT_TEXT');
                 var confirm = $filter('translate')('DELETE_ALERT_CONFIRM');
                 var cancel = $filter('translate')('DELETE_ALERT_CANCEL');
-
-                if (index > -1) {
+                //var message = $filter('translate')('DELETE_ALERT_DELETED');
+                //swal(message, "", "success");
                 swal({
-                        title: title,
-                        text: text,
+                        title: "Are you sure?",
+                        text: "You will not be able to recover this argument!",
                         type: "warning",
                         showCancelButton: true,
                         confirmButtonColor: "#DD6B55",
-                        confirmButtonText: confirm,
+                        confirmButtonText: "Yes, delete it!",
                         closeOnConfirm: false
                     },
                     function(){
-                            var place = argument.place;
-                            console.log(argument.place);
-                            scope.argumentation.arguments.splice(index, 1);
-                            scope.reorder_place(place);
-                            scope.argumentcontent = scope.getnthargument(scope.argumentation, 1);
-                            scope.form.$setDirty();
+                        scope.$apply(function () {
                             scope.deletemode = false;
-                            var message = $filter('translate')('DELETE_ALERT_DELETED');
-                            swal(message, "", "success");
-
+                        });
                     });
-                 }
+
             };
 
             scope.reorder_place = function(place){
@@ -349,6 +344,7 @@ app.directive("getGoToArgumentationMethod",['$location','$http', '$timeout', fun
     return {
         link: function(scope, element, attr)
         {
+
             scope.goToArgumentation = function(argumentation_id,startingposition, leavingposition, edit){
                 startingposition = startingposition || 1;
                 edit = edit || false;
@@ -360,6 +356,15 @@ app.directive("getGoToArgumentationMethod",['$location','$http', '$timeout', fun
                     } else {
                         $location.path("/" + argumentation_id).search({"sp": startingposition});
                     }
+                }, 1300);
+            };
+
+            scope.goToOverview = function(startingposition, leavingposition){
+                startingposition = startingposition || 1;
+                leavingposition = leavingposition || 1;
+                scope.movingBlock = leavingposition;
+                $timeout(function(){
+                    $location.path("/overview").search({"sp": startingposition});
                 }, 1300);
             };
         }
@@ -380,6 +385,35 @@ app.directive("changeLanguageButton",['$location', '$timeout', '$translate', fun
         },
         templateUrl:"argumentation/change_language_button.html"
 
+    };
+
+}]);
+
+app.directive("myArgumentations",['$location', '$timeout', '$http', function($location,$timeout, $http){
+
+    return {
+        link: function(scope, element, attr)
+        {
+            if (scope.startingposition == undefined){
+                scope.movingBlock = 1;
+            } else {
+                scope.movingBlock = scope.startingposition;
+            }
+
+            $http({
+                method: 'GET',
+                url: '/myargumentations.json'
+            }).then(function successCallback(response) {
+                scope.argumentations = response.data;
+                scope.loading = false;
+                $timeout(function () {
+                    scope.movingBlock = 1;
+                }, 700);
+
+            });
+
+        },
+        templateUrl:"argumentation/my_argumentations.html"
     };
 
 }]);

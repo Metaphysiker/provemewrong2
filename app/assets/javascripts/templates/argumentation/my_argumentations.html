@@ -1,0 +1,38 @@
+<div class="container">
+    <h2> <span translate="OVERVIEW"></span></h2>
+    <p translate="OVERVIEW_COMMENT"></p>
+    <button ng-click="create_argumentation()"
+            class="btn btn-lg btn-success">
+        <span translate="CREATE_ARGUMENTATION"></span>
+    </button>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th translate="ARGUMENTATIONS"></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="argumentation in argumentations">
+            <td><h4>{{ argumentation.title }}</h4></td>
+            <td>
+                <button ng-click="goToArgumentation(argumentation.id, 3, 2, false)" class="btn btn-success">
+                    <span translate="SHOW"></span>
+                </button>
+            </td>
+            <td>
+                <button ng-click="goToArgumentation(argumentation.id, 3, 2, true)" class="btn btn-primary">
+                    <span translate="EDIT"></span>
+                </button>
+            </td>
+            <td>
+                <button ng-click="delete_full_argumentation(argumentation.id)" class="btn btn-danger">
+                    <span translate="DELETE_BUTTON"></span>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

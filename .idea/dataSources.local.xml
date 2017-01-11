@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails provemewrong2: production" uuid="f28bbb55-ba4b-4dd8-b219-e7d4e90b5f10">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <user-name>provemewrong2</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddffadff8dfe5dffcdfefdfe7dfefdffddff8dfe5dfe4dfeddf98dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+    <data-source name="Rails provemewrong2: test" uuid="7703ed27-4824-4056-8aa0-b3a919f7cf93">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <user-name>&lt;%= Rails.application.secrets.username %&gt;</user-name>
+      <user-password>df96df8fdf97df8adff8dfcbdfc3dfc6dfd9df84dfcbdfdadfdadfc6dfc3dfc9dfcbdfdedfc3dfc5dfc4df84dfd9dfcfdfc9dfd8dfcfdfdedfd9df84dfdadfcbdfd9dfd9dfdddfc5dfd8dfcedf8adf8fdf94</user-password>
+    </data-source>
+    <data-source name="Rails provemewrong2: development" uuid="1e6360e5-e986-4813-bca0-8d270561d22f">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>&lt;%= Rails.application.secrets.username %&gt;</user-name>
+      <user-password>df96df8fdf97df8adff8dfcbdfc3dfc6dfd9df84dfcbdfdadfdadfc6dfc3dfc9dfcbdfdedfc3dfc5dfc4df84dfd9dfcfdfc9dfd8dfcfdfdedfd9df84dfdadfcbdfd9dfd9dfdddfc5dfd8dfcedf8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>

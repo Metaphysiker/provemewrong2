@@ -3,6 +3,7 @@ angular.module(
     "$routeProvider",
     function($routeProvider) {
         $routeProvider.when("/overview/",{
+            controller: "mainArgumentationController",
             templateUrl: "argumentation/overview.html"
         }).when("/search",{
             controller: "mainArgumentationController",

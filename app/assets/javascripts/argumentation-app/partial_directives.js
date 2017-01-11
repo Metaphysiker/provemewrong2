@@ -96,3 +96,11 @@ app.directive("searchResults",['$location', '$timeout', function($location,$time
     };
 
 }]);
+
+app.directive("userPanel",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        templateUrl:"argumentation/user_panel.html"
+    };
+
+}]);

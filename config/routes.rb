@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :argumentations, only: [ :index, :show, :create, :update]
   get '/search', to: "argumentations#search"
   post '/search', to: "argumentations#search"
+
+  get '/myargumentations', to: "argumentations#myargumentations"
 end
