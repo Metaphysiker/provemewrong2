@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/argumentation', to: "dashboard#argumentation"
 
   resources :argumentations, only: [ :index, :show, :create, :update]
+  post '/destroyargumentation', to: "argumentations#destroyargumentation"
   get '/search', to: "argumentations#search"
   post '/search', to: "argumentations#search"
 

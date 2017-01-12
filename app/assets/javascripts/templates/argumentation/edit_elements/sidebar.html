@@ -2,7 +2,11 @@
 
     <div class="panel panel-success">
         <button ng-click="save()" ng-disabled="form.$invalid || form.$pristine" type="button" class="btn btn-success btn-block">
-            <h3 class="panel-title pull-left"><span translate="SAVE"></span></h3><i class="fa fa-floppy-o pull-right" aria-hidden="true"></i></button>
+            <h3 class="panel-title pull-left">
+                <span translate="SAVE" ng-if="!form.$dirty"></span>
+                <span translate="NOTSAVED" ng-if="form.$dirty"></span>
+            </h3>
+            <i class="fa fa-floppy-o pull-right" aria-hidden="true"></i></button>
     </div>
 
     <div class="panel panel-info">
@@ -26,7 +30,7 @@
 
         <div class="panel-body" ng-if="deletemode == true">
             <p translate="DELETE_INSTRUCTIONS"></p>
-            <button ng-click="destroyArgument()"
+            <button ng-click="destroyArgument()" ng-disabled="selectedArgumentToDestroy == 'nothing'"
                     class="btn btn-lg btn-danger">
                 <span translate="DELETE_BUTTON"></span>
             </button>

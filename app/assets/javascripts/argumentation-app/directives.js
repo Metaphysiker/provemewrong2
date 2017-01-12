@@ -204,13 +204,47 @@ app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', func
     };
 }]);
 
-app.directive("getEditMethods",['$location','$http', '$filter', function($location, $http, $filter){
+app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', function($location, $http, $filter, $timeout){
 
     return {
         link: function(scope, element, attr)
         {
+            scope.$on('$locationChangeStart', function(event, next, current) {
+                if (scope.form.$dirty) {
+                    var newPath = $location.path();
+                    var movBlockNow = scope.movingBlock;
+                    event.preventDefault();
+                    scope.movingBlock = 1;
+                    swal({
+                            title: "Unsaved Changes",
+                            text: "If you leave this page without saving, all changes will be lost",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Yes, proceed anyway",
+                            cancelButtonText: "Back",
+                            closeOnConfirm: true
+                        },
+                        function(){
+                            swal({
+                                title: "Changes have been removed!",
+                                text: "",
+                                timer: 1000,
+                                showConfirmButton: false
+                            });
+                            scope.$apply(function() {
+                                scope.movingBlock = movBlockNow;
+                                scope.form.$setPristine();
+                                scope.form.$setUntouched();
+                                $timeout(function () {
+                                    $location.path(newPath);
+                                }, 1300);
+                            });
+                        });
+                }
+            });
 
-            scope.save = function(){
+                scope.save = function(){
                 var currentplace = scope.argumentcontent.place;
                 if (scope.form.$valid) {
                     $http({
@@ -248,21 +282,35 @@ app.directive("getEditMethods",['$location','$http', '$filter', function($locati
                 var text = $filter('translate')('DELETE_ALERT_TEXT');
                 var confirm = $filter('translate')('DELETE_ALERT_CONFIRM');
                 var cancel = $filter('translate')('DELETE_ALERT_CANCEL');
-                //var message = $filter('translate')('DELETE_ALERT_DELETED');
-                //swal(message, "", "success");
+                var message = $filter('translate')('DELETE_ALERT_DELETED');
+
+                var argument = scope.selectedArgumentToDestroy;
+                var index = scope.argumentation.arguments.indexOf(argument);
+
                 swal({
-                        title: "Are you sure?",
-                        text: "You will not be able to recover this argument!",
+                        title: title,
+                        text: text,
                         type: "warning",
                         showCancelButton: true,
                         confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "Yes, delete it!",
+                        confirmButtonText: confirm,
+                        cancelButtonText: cancel,
                         closeOnConfirm: false
                     },
                     function(){
+                        swal(message, "", "success");
                         scope.$apply(function () {
-                            scope.deletemode = false;
+                            if (index > -1) {
+                                var place = argument.place;
+                                scope.argumentation.arguments.splice(index, 1);
+                                scope.reorder_place(place);
+                                scope.argumentcontent = scope.getnthargument(scope.argumentation, place);
+                                scope.form.$setDirty();
+                                scope.deletemode = false;
+                                scope.selectedArgumentToDestroy = "nothing";
+                            }
                         });
+
                     });
 
             };
@@ -400,17 +448,21 @@ app.directive("myArgumentations",['$location', '$timeout', '$http', function($lo
                 scope.movingBlock = scope.startingposition;
             }
 
-            $http({
-                method: 'GET',
-                url: '/myargumentations.json'
-            }).then(function successCallback(response) {
-                scope.argumentations = response.data;
-                scope.loading = false;
-                $timeout(function () {
-                    scope.movingBlock = 1;
-                }, 700);
+            scope.getMyArgumentations = function(){
+                $http({
+                    method: 'GET',
+                    url: '/myargumentations.json'
+                }).then(function successCallback(response) {
+                    scope.argumentations = response.data;
+                    scope.loading = false;
+                    $timeout(function () {
+                        scope.movingBlock = 1;
+                    }, 700);
 
-            });
+                });
+            };
+
+            scope.getMyArgumentations();
 
             scope.createArgumentation = function(){
                 $http({
@@ -421,9 +473,18 @@ app.directive("myArgumentations",['$location', '$timeout', '$http', function($lo
                     console.log(id);
                     scope.movingBlock = 2;
                     $timeout(function () {
-                        $location.path("/" + id).search({"sp": 3});
+                        $location.path("/" + id + '/edit').search({"sp": 3});
                     }, 700);
+                });
+            };
 
+            scope.deleteArgumentation = function(id){
+                $http({
+                    method: 'POST',
+                    url: '/destroyargumentation.json',
+                    data: {id: id}
+                }).then(function successCallback(response) {
+                    scope.getMyArgumentations();
                 });
             };
 

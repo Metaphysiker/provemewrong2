@@ -20,7 +20,7 @@ app.controller("mainArgumentationController", ['$scope','$routeParams', '$transl
     $scope.switchmode = false;
     $scope.deletemode = false;
     $scope.selectedArguments = [];
-    $scope.selectedArgumentToDestroy = {};
+    $scope.selectedArgumentToDestroy = "nothing";
     $scope.argumentcontent = {};
 
 }]);

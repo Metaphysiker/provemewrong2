@@ -1,5 +1,5 @@
 class ArgumentationsController < ApplicationController
-  before_action :find_argumentation, only: [:show]
+  before_action :find_argumentation, only: [:show, :destroyargumentation]
 
   PAGE_SIZE = 10
 
@@ -53,6 +53,10 @@ class ArgumentationsController < ApplicationController
     argumentation.update(argumentation_params)
     updatearguments(argumentation, params[:arguments])
     @argumentation = Argumentation.find(params[:id])
+  end
+
+  def destroyargumentation
+    @argumentation.destroy
   end
 
   def myargumentations
