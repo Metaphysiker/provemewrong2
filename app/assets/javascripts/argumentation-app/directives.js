@@ -215,14 +215,20 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                     var movBlockNow = scope.movingBlock;
                     event.preventDefault();
                     scope.movingBlock = 1;
+
+                    var title = $filter('translate')('UNSAVED_CHANGES');
+                    var text = $filter('translate')('UNSAVED_CHANGES_COMMENT');
+                    var confirm = $filter('translate')('UNSAVED_CHANGES_CONFIRM');
+                    var cancel = $filter('translate')('BACK');
+
                     swal({
-                            title: "Unsaved Changes",
-                            text: "If you leave this page without saving, all changes will be lost",
+                            title: title,
+                            text: text,
                             type: "warning",
                             showCancelButton: true,
                             confirmButtonColor: "#DD6B55",
-                            confirmButtonText: "Yes, proceed anyway",
-                            cancelButtonText: "Back",
+                            confirmButtonText: confirm,
+                            cancelButtonText: cancel,
                             closeOnConfirm: true
                         },
                         function(){

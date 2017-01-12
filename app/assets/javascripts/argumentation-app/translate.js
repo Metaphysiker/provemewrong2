@@ -34,7 +34,12 @@ angular.module(
         EDIT: "Edit",
         LEAVE_EDIT: "Leave Edit Mode",
         CREATE_ARGUMENTATION: "Create Argumentation",
-        SHOW: "Show"
+        SHOW: "Show",
+        UNSAVED_CHANGES: "Unsaved Changes",
+        UNSAVED_CHANGES_COMMENT: "If you leave this page without saving, all changes will be lost",
+        UNSAVED_CHANGES_CONFIRM: "Yes, proceed anyway",
+        BACK: "Back"
+
 
     });
     $translateProvider.translations('de', {
@@ -71,7 +76,11 @@ angular.module(
         EDIT: "Bearbeiten",
         LEAVE_EDIT: "Editiermodus verlassen",
         CREATE_ARGUMENTATION: "Argumentation erstellen",
-        SHOW: "Zeigen"
+        SHOW: "Zeigen",
+        UNSAVED_CHANGES: "Ungespeicherte Veränderungen",
+        UNSAVED_CHANGES_COMMENT: "Alle Veränderungen gehen verloren, wenn Sie nicht speichern",
+        UNSAVED_CHANGES_CONFIRM: "Ja, Veränderungen nicht speichern",
+        BACK: "Zurück"
     });
     $translateProvider.preferredLanguage('de');
     $translateProvider.useSanitizeValueStrategy('sanitizeParameters');

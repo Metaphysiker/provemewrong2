@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d224295-34ef-4391-9b72-3c959c1e7c77" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/controller.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/edit_elements/sidebar.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/edit_elements/sidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/my_argumentations.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/my_argumentations.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/argumentations_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/argumentations_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -45,8 +39,8 @@
       <file leaf-file-name="directives.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="223" column="67" lean-forward="false" selection-start-line="223" selection-start-column="67" selection-end-line="223" selection-end-column="67" />
+            <state relative-caret-position="232">
+              <caret line="228" column="58" lean-forward="true" selection-start-line="228" selection-start-column="58" selection-end-line="228" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -115,8 +109,8 @@
       <file leaf-file-name="translate.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="32" />
+            <state relative-caret-position="487">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="82" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -164,8 +158,8 @@
       <find>scope.$</find>
       <find>app</find>
       <find>apply</find>
-      <find>location</find>
       <find>save</find>
+      <find>location</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -222,8 +216,8 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/argumentations_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/controller.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/edit_elements/sidebar.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js" />
       </list>
     </option>
@@ -238,8 +232,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="398" />
-    <option name="y" value="162" />
+    <option name="x" value="386" />
+    <option name="y" value="85" />
     <option name="width" value="1586" />
     <option name="height" value="963" />
   </component>
@@ -846,15 +840,15 @@
       <workItem from="1484015260829" duration="29366000" />
       <workItem from="1484121606854" duration="11731000" />
       <workItem from="1484142698649" duration="6935000" />
-      <workItem from="1484155181711" duration="14594000" />
+      <workItem from="1484155181711" duration="15096000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200808000" />
+    <option name="totallyTimeSpent" value="201310000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="398" y="162" width="1586" height="963" extended-state="0" />
+    <frame x="386" y="85" width="1586" height="963" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25844157" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1206,14 +1200,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/my_argumentations.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1254,10 +1240,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="82" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="223" column="67" lean-forward="false" selection-start-line="223" selection-start-column="67" selection-end-line="223" selection-end-column="67" />
+        <state relative-caret-position="232">
+          <caret line="228" column="58" lean-forward="true" selection-start-line="228" selection-start-column="58" selection-end-line="228" selection-end-column="58" />
           <folding />
         </state>
       </provider>
