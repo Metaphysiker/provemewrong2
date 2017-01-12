@@ -116,7 +116,7 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', funct
 
             scope.buttonmaker = function(haystack) {
                 //needle = /argumentation-link_to\((\d+)\)/i;
-                needle = /argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/;
+                needle = "/argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/";
                 haystack = haystack || "";
                 if(!needle) {
                     return $sce.trustAsHtml(haystack);

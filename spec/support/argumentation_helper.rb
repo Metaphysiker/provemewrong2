@@ -8,15 +8,17 @@ module ArgumentationHelper
 
   def create_single_argumentation_and_go_to_overview
     visit "/argumentation#!/overview"
-    click_button "Create Argumentation"
+    click_button "Argumentation erstellen"
 
-    fill_in "argumentation_title", with: "Philosophie"
-    fill_in "argumentation_description", with: "Was machen Philosophen?"
+    fill_in "argumentation_title", with: "A Defence of Moral Realism"
+    fill_in "argumentation_content", with: "Russ Shafer-Landau"
 
-    click_button "Save"
+    click_button "Speichern"
+    sleep 1
+    click_button "OK"
 
-    visit "/argumentation#!/overview"
-    expect(page).to have_content("Philosophie")
+    click_button "Übersicht"
+    expect(page).to have_content("A Defence of Moral Realism")
   end
 
   def go_to_edit
@@ -24,12 +26,14 @@ module ArgumentationHelper
     sleep 3
   end
 
-  def add_argument(title, description)
-    click_button "Add Argument"
+  def add_argument(title, content)
+    click_button "Argument hinzufügen"
+    sleep 1
     click_button "OK"
     fill_in "argumentcontent_title", with: title
-    fill_in "argumentcontent_description", with: description
-    find('button', :text => "Save").trigger('click')
+    fill_in "argumentcontent_content", with: content
+    click_button "Speichern"
+    sleep 1
     click_button "OK"
   end
 end

@@ -78,7 +78,7 @@ angular.module(
         OVERVIEW: "Übersicht",
         OVERVIEW_COMMENT: "Deine Argumentationen und Kommentare",
         EDIT: "Bearbeiten",
-        LEAVE_EDIT: "Editiermodus verlassen",
+        LEAVE_EDIT: "Bearbeitungsmodus verlassen",
         CREATE_ARGUMENTATION: "Argumentation erstellen",
         SHOW: "Zeigen",
         UNSAVED_CHANGES: "Ungespeicherte Veränderungen",
