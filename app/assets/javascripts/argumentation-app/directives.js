@@ -444,7 +444,7 @@ app.directive("changeLanguageButton",['$location', '$timeout', '$translate', fun
 
 }]);
 
-app.directive("myArgumentations",['$location', '$timeout', '$http', function($location,$timeout, $http){
+app.directive("myArgumentations",['$location', '$timeout', '$http', '$filter', function($location,$timeout, $http, $filter){
 
     return {
         link: function(scope, element, attr)
@@ -486,12 +486,32 @@ app.directive("myArgumentations",['$location', '$timeout', '$http', function($lo
             };
 
             scope.deleteArgumentation = function(id){
-                $http({
-                    method: 'POST',
-                    url: '/destroyargumentation.json',
-                    data: {id: id}
-                }).then(function successCallback(response) {
-                    scope.getMyArgumentations();
+
+                var title = $filter('translate')('DELETE_ALERT_TITLE');
+                var text = $filter('translate')('DELETE_ARGUMENTATION_ALERT_TEXT');
+                var confirm = $filter('translate')('DELETE_ALERT_CONFIRM');
+                var message = $filter('translate')('DELETE_ARGUMENTATION_ALERT_DELETED');
+
+            swal({
+                    title: title,
+                    text: text,
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: confirm,
+                    closeOnConfirm: false
+                },
+                function(){
+                    swal(message, "", "success");
+                    scope.$apply(function () {
+                        $http({
+                            method: 'POST',
+                            url: '/destroyargumentation.json',
+                            data: {id: id}
+                        }).then(function successCallback(response) {
+                            scope.getMyArgumentations();
+                        });
+                    });
                 });
             };
 

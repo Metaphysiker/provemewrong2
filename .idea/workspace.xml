@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7d224295-34ef-4391-9b72-3c959c1e7c77" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -35,11 +36,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="directives.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="directives.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="244" column="59" lean-forward="true" selection-start-line="244" selection-start-column="59" selection-end-line="244" selection-end-column="59" />
+            <state relative-caret-position="232">
+              <caret line="490" column="0" lean-forward="false" selection-start-line="490" selection-start-column="0" selection-end-line="492" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/services.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -50,16 +61,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="argumentations_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/argumentations_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="72" lean-forward="false" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -105,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="translate.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="translate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="82" selection-end-column="22" />
+            <state relative-caret-position="217">
+              <caret line="32" column="76" lean-forward="false" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -129,8 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>first_argument</find>
-      <find>linkmaker</find>
       <find>highlight</find>
       <find>movingblo</find>
       <find>movingblock</find>
@@ -154,11 +153,13 @@
       <find>current</find>
       <find>locationch</find>
       <find>location.path</find>
-      <find>scope.$</find>
       <find>app</find>
       <find>apply</find>
       <find>save</find>
       <find>location</find>
+      <find>delete</find>
+      <find>scope.$</find>
+      <find>scope.$apply</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -216,8 +217,8 @@
         <option value="$PROJECT_DIR$/app/controllers/argumentations_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/controller.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/edit_elements/sidebar.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js" />
       </list>
     </option>
   </component>
@@ -231,8 +232,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="386" />
-    <option name="y" value="85" />
+    <option name="x" value="236" />
+    <option name="y" value="59" />
     <option name="width" value="1586" />
     <option name="height" value="963" />
   </component>
@@ -839,15 +840,15 @@
       <workItem from="1484015260829" duration="29366000" />
       <workItem from="1484121606854" duration="11731000" />
       <workItem from="1484142698649" duration="6935000" />
-      <workItem from="1484155181711" duration="16049000" />
+      <workItem from="1484155181711" duration="18869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202263000" />
+    <option name="totallyTimeSpent" value="205083000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="386" y="85" width="1586" height="963" extended-state="0" />
+    <frame x="236" y="59" width="1586" height="963" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25844157" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -901,13 +902,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/important_bits.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/ng-sweet-alert.js" />
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/sweetalert-dev.js" />
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/sweetalert.css" />
@@ -1046,6 +1040,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,14 +1170,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/argumentations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1231,14 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="82" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/user_panel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1247,10 +1226,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="244" column="59" lean-forward="true" selection-start-line="244" selection-start-column="59" selection-end-line="244" selection-end-column="59" />
+        <state relative-caret-position="232">
+          <caret line="490" column="0" lean-forward="false" selection-start-line="490" selection-start-column="0" selection-end-line="492" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/argumentation-app/translate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="32" column="76" lean-forward="false" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
           <folding />
         </state>
       </provider>
