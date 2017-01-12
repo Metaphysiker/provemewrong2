@@ -212,6 +212,7 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
             scope.$on('$locationChangeStart', function(event, next, current) {
                 if (scope.form.$dirty) {
                     var newPath = $location.path();
+                    var searchObject = $location.search();
                     var movBlockNow = scope.movingBlock;
                     event.preventDefault();
                     scope.movingBlock = 1;
@@ -243,7 +244,7 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                                 scope.form.$setPristine();
                                 scope.form.$setUntouched();
                                 $timeout(function () {
-                                    $location.path(newPath);
+                                    $location.path(newPath).search(searchObject);
                                 }, 1300);
                             });
                         });
