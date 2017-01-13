@@ -299,8 +299,8 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                             swal.showInputError("You need to write something!");
                             return false
                         }
-
-                        swal("Nice!", "You wrote: " + inputValue, "success");
+                        var jesus = "JESUS";
+                        swal("Nice!", "You wrote: " + jesus, "success");
                     });
             };
 
