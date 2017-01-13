@@ -41,6 +41,7 @@ feature "angular test" do
     add_argument("A case against Moral Nihilism", "Moral nihilism is the denial of moral properties.")
     add_argument("Moral Properties are not natural", "What is right and wrong can be known a priori.")
     click_button "Bearbeitungsmodus verlassen"
+    sleep 4
 
     expect(page.text.index("A case against Moral Nihilism") < page.text.index("Moral Properties are not natural")).to be true
 
@@ -51,8 +52,67 @@ feature "angular test" do
     click_button "Tauschen"
     click_button "Speichern"
     click_button "Bearbeitungsmodus verlassen"
+    sleep 3
 
     expect(page.text.index("A case against Moral Nihilism") < page.text.index("Moral Properties are not natural")).to be false
   end
 
+  scenario "User creates an argumentation, adds an argument and deletes it" do
+    log_in(email, password)
+    create_single_argumentation_and_go_to_overview
+    click_button "Bearbeiten"
+    add_argument("A case against Moral Nihilism", "Moral nihilism is the denial of moral properties.")
+    click_button "Argument löschen"
+    choose 'A case against Moral Nihilism'
+    click_button "Löschen"
+    sleep 1
+    click_button "Ja, löschen!"
+    sleep 1
+    click_button "OK"
+    sleep 1
+    click_button "Speichern"
+    sleep 1
+    click_button "OK"
+    sleep 1
+    click_button "Bearbeitungsmodus verlassen"
+    sleep 3
+    expect(page).not_to have_content("A case against Moral Nihilism")
+  end
+
+  scenario "User creates an argumentation, changes something and leaves without saving" do
+    log_in(email, password)
+    create_single_argumentation_and_go_to_overview
+    click_button "Bearbeiten"
+    fill_in "argumentation_title", with: "unsaved"
+    click_button "Bearbeitungsmodus verlassen"
+    sleep 2
+    click_button "Ja, Veränderungen nicht speichern"
+    sleep 2
+    expect(page).to have_content("A Defence of Moral Realism")
+    click_button "Bearbeiten"
+    fill_in "argumentation_title", with: "now saved"
+    click_button "Bearbeitungsmodus verlassen"
+    sleep 1
+    click_button "Zurück"
+    click_button "Speichern"
+    sleep 1
+    click_button "OK"
+
+    click_button "Bearbeitungsmodus verlassen"
+    sleep 3
+    expect(page).to have_content("now saved")
+  end
+
+  scenario "User creates an argumentation and deletes it" do
+    log_in(email, password)
+    create_single_argumentation_and_go_to_overview
+    click_button "Löschen"
+    sleep 1
+    click_button "Ja, löschen!"
+    sleep 1
+    click_button "OK"
+    expect(page).not_to have_content("A Defence of Moral Realism")
+  end
+
 end
+#save_screenshot('screen.png', full: true)

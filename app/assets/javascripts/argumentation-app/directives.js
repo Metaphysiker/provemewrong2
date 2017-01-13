@@ -116,15 +116,28 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', funct
 
             scope.buttonmaker = function(haystack) {
                 //needle = /argumentation-link_to\((\d+)\)/i;
-                needle = "/argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/";
+               // needle = /argumentation-link_to\((\d+),\s"([\w\sÀ-ž]+)"\)/gi;
+                needle = /hyperlink\((\d+),\s"([\w\sÀ-ž]+)"\)/gi;
+                needlewo = /hyperlink\((\d+),\s"([\w\sÀ-ž]+)"\)/;
+                //needle = /argumentation-link_to\\((\\d+),\\s([\\w\\sÀ-ž]+)\\)/;
+                //needle = "/argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/";
+                //needle = new RegExp(/argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/);
+               // needle = '/argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/';
                 haystack = haystack || "";
                 if(!needle) {
                     return $sce.trustAsHtml(haystack);
                 }
                 //needle = needle.replace(/\s/g, "|");
-                return $sce.trustAsHtml(haystack.replace(new RegExp(needle, "gi"), function(match) {
-                    return '<button ng-click="goToArgumentation(' +  needle.exec(match)[1] + ', 2, 3, false)" class="btn btn-md btn-info"> ' + needle.exec(match)[2] + '</button>'
+                //return $sce.trustAsHtml(haystack.replace(new RegExp(needle, 'gi'), function(match) {
+                //return $sce.trustAsHtml(haystack.replace(needle, function(match) {
+                 //   return '<button ng-click="goToArgumentation(' +  needle.exec(match)[1] + ', 2, 3, false)" class="btn btn-md btn-info"> ' + needle.exec(match)[2] + '</button>'
+                //}));
+
+                return $sce.trustAsHtml(haystack.replace(needle, function(match) {
+                  // return '<button ng-click="goToArgumentation(' + /\d+/.exec(match) + ', 2, 3, false)" class="btn btn-md btn-info"> ' + /"([\w\sÀ-ž]+)"/.exec(match)[1] + '</button>'
+                    return '<button ng-click="goToArgumentation(' + needlewo.exec(match)[1] + ', 2, 3, false)" class="btn btn-md btn-default"> ' + needlewo.exec(match)[2] + '</button>'
                 }));
+
             };
 
             scope.goToArgumentation = function(argumentation_id,startingposition, leavingposition, edit){
@@ -251,7 +264,7 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                 }
             });
 
-                scope.save = function(){
+            scope.save = function(){
                 var currentplace = scope.argumentcontent.place;
                 if (scope.form.$valid) {
                     $http({
@@ -267,6 +280,28 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                         scope.form.$setUntouched();
                     });
                 }
+            };
+
+            scope.addForeignArgumentation = function(){
+                swal({
+                        title: "An input!",
+                        text: "Write something interesting:",
+                        type: "input",
+                        showCancelButton: true,
+                        closeOnConfirm: false,
+                        animation: "slide-from-top",
+                        inputPlaceholder: "Write something"
+                    },
+                    function(inputValue){
+                        if (inputValue === false) return false;
+
+                        if (inputValue === "") {
+                            swal.showInputError("You need to write something!");
+                            return false
+                        }
+
+                        swal("Nice!", "You wrote: " + inputValue, "success");
+                    });
             };
 
             scope.addArgument = function(){
@@ -311,7 +346,7 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                                 var place = argument.place;
                                 scope.argumentation.arguments.splice(index, 1);
                                 scope.reorder_place(place);
-                                scope.argumentcontent = scope.getnthargument(scope.argumentation, place);
+                                scope.argumentcontent = scope.getnthargument(scope.argumentation, 1);
                                 scope.form.$setDirty();
                                 scope.deletemode = false;
                                 scope.selectedArgumentToDestroy = "nothing";
