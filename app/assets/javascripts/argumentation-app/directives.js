@@ -66,7 +66,7 @@ app.directive("goToArgumentationButton",['$location', '$timeout', function($loca
 
 
 
-app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', function($location, $http, $timeout, $sce){
+app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$sanitize', function($location, $http, $timeout, $sce, $sanitize){
 
     return {
         link: function(scope, element, attr)
@@ -112,32 +112,6 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', funct
                     }
                 }
                 return nthargument;
-            };
-
-            scope.buttonmaker = function(haystack) {
-                //needle = /argumentation-link_to\((\d+)\)/i;
-               // needle = /argumentation-link_to\((\d+),\s"([\w\sÀ-ž]+)"\)/gi;
-                needle = /hyperlink\((\d+),\s"([\w\sÀ-ž]+)"\)/gi;
-                needlewo = /hyperlink\((\d+),\s"([\w\sÀ-ž]+)"\)/;
-                //needle = /argumentation-link_to\\((\\d+),\\s([\\w\\sÀ-ž]+)\\)/;
-                //needle = "/argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/";
-                //needle = new RegExp(/argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/);
-               // needle = '/argumentation-link_to\((\d+),\s([\w\sÀ-ž]+)\)/';
-                haystack = haystack || "";
-                if(!needle) {
-                    return $sce.trustAsHtml(haystack);
-                }
-                //needle = needle.replace(/\s/g, "|");
-                //return $sce.trustAsHtml(haystack.replace(new RegExp(needle, 'gi'), function(match) {
-                //return $sce.trustAsHtml(haystack.replace(needle, function(match) {
-                 //   return '<button ng-click="goToArgumentation(' +  needle.exec(match)[1] + ', 2, 3, false)" class="btn btn-md btn-info"> ' + needle.exec(match)[2] + '</button>'
-                //}));
-
-                return $sce.trustAsHtml(haystack.replace(needle, function(match) {
-                  // return '<button ng-click="goToArgumentation(' + /\d+/.exec(match) + ', 2, 3, false)" class="btn btn-md btn-info"> ' + /"([\w\sÀ-ž]+)"/.exec(match)[1] + '</button>'
-                    return '<button ng-click="goToArgumentation(' + needlewo.exec(match)[1] + ', 2, 3, false)" class="btn btn-md btn-default"> ' + needlewo.exec(match)[2] + '</button>'
-                }));
-
             };
 
             scope.goToArgumentation = function(argumentation_id,startingposition, leavingposition, edit){
