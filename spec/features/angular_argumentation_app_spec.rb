@@ -114,5 +114,26 @@ feature "angular test" do
     expect(page).not_to have_content("A Defence of Moral Realism")
   end
 
+  scenario "User creates an argumentation and adds two references" do
+    anotheruser = User.create!(email: "anotheruser@gmail.com",
+                 password: "abcdefgh123",
+                 password_confirmation: "abcdefgh123")
+    argum = Argumentation.create(title: "Kafka, Parmenides und das Absurde das Lebendige und das Enorme", content: "Kafka und Sartre haben etwas gemeinsam, beide räumen dem Absurden einen besonderen Platz ein.", user_id: anotheruser.id)
+
+    log_in(email, password)
+    create_single_argumentation_and_go_to_overview
+    click_button "Bearbeiten"
+    click_button "Referenz hinzufügen"
+    fill_in "keywords", with: "Kafka, Parmenides und das"
+    sleep 3
+    expect(page).to have_content("Kafka, Parmenides und das Absurde das Lebendige und das Enorme")
+    click_button "Kafka, Parmenides und das Absurde das Lebendige und das Enorme"
+    expect(page).to have_content("Kopieren und im Text einfügen!")
+    expect(page.find_field("copypaste").value).to have_content("hyperlink(" + argum.id.to_s + ":Kafka Parmenides und das Absurde das Lebendige und das Enorme)")
+    #expect(page).to have_content("hyperlink(" + argum.id.to_s + ":Kafka Parmenides und das Absurde das Lebendige und das Enorme)")
+    fill_in "argumentcontent_content", with: "Mein Argument beruht auf der Prämisse, dass Kafka und Sartre etwas gemeinsam haben, siehe: hyperlink(" + argum.id.to_s + ":New Kafka Button)"
+    expect(page).to have_button("New Kafka Button")
+  end
+
 end
 #save_screenshot('screen.png', full: true)

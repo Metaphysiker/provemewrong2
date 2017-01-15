@@ -5,6 +5,7 @@
                 <input type="text"
                        name="keywords"
                        class="form-control"
+                       placeholder= "{{'SEARCH_SHORT_PLACEHOLDER' | translate }}"
                        ng-model="keywords"
                        ng-change="searchargumentationbytitle(keywords)">
         </form>
@@ -19,9 +20,9 @@
         </div>
     </section>
     <section class="well" ng-show="pastable">
-        Copy & Paste this inside your text! <br><br><input class="form-control" id="inputDefault" type="text" ng-model="pastable">
+        <span translate="COPY_PASTE"></span> <br><br><input name="copypaste" class="form-control" id="inputDefault" type="text" ng-model="pastable">
     </section>
     <section class="well" ng-show="!pastable">
-        Please enter search terms!
+        <span translate="SEARCH_COMMENT"></span>
     </section>
 </div>
