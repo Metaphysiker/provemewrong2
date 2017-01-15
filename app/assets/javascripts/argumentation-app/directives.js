@@ -264,10 +264,6 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                 }
             };
 
-            scope.addReferenceToArgumentation = function(){
-
-            };
-
             scope.addArgument = function(){
 
                 var swalmessage = $filter('translate')('ADDED_ARGUMENT');

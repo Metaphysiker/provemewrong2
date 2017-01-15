@@ -125,6 +125,15 @@ app.directive("searchForArgumentation",['$location', '$timeout', '$http', functi
     return {
         link: function(scope, element, attr)
         {
+            scope.addReference = function(){
+                if (scope.referencemode == false){
+                    scope.referencemode = true;
+                } else {
+                    scope.referencemode = false;
+                    scope.pastable = "";
+                }
+            };
+
             scope.searchargumentationbytitle = function(keywords){
                 $http({
                     method: 'POST',
@@ -133,7 +142,11 @@ app.directive("searchForArgumentation",['$location', '$timeout', '$http', functi
                 }).then(function successCallback(response) {
                     scope.argumentations = response.data;
                 });
-            }
+            };
+
+            scope.createPastable = function(argumentation){
+                scope.pastable = "hyperlink(" + argumentation.id + ":" + (argumentation.title).replace(/\.|\!|\?|:/g,'') + ")";
+            };
 
         },
         templateUrl:"argumentation/edit_elements/search_for_argumentation.html"

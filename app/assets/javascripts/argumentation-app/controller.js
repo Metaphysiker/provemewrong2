@@ -19,9 +19,11 @@ app.controller("mainArgumentationController", ['$scope','$routeParams', '$transl
     $scope.argumentations = {};
     $scope.switchmode = false;
     $scope.deletemode = false;
+    $scope.referencemode = false;
     $scope.selectedArguments = [];
     $scope.selectedArgumentToDestroy = "nothing";
     $scope.argumentcontent = {};
+    $scope.pastable = "";
 
 }]);
 

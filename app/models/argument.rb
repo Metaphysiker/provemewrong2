@@ -2,7 +2,7 @@ class Argument < ApplicationRecord
   #after_create :add_place
   #after_destroy :reorder_place
 
-  belongs_to :argumentation1
+  belongs_to :argumentation
 
   include PgSearch
   pg_search_scope :search_by_title_content, :against => [:title, :content]

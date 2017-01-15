@@ -122,5 +122,6 @@ div.white-space-pre-line {
 
 .scrollable{
     overflow: auto;
-    height: 300px;
+    height: 200px;
+    margin-bottom: 20px;
 }
