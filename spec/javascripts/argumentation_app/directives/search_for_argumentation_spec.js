@@ -1,4 +1,4 @@
-describe('mainArgumentationController', function () {
+describe('search for argumentation directive', function () {
     var $rootScope, $compile;
 
     beforeEach(module('ArgumentationController'));
