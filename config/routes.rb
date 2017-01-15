@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   post '/search', to: "argumentations#search"
 
   get '/myargumentations', to: "argumentations#myargumentations"
+  post '/sanitizepreview', to: "argumentations#sanitizepreview"
 
+  post '/searchtitle', to: "argumentations#searchtitle"
 end

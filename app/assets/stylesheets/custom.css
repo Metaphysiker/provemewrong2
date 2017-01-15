@@ -119,3 +119,8 @@ div.white-space-pre-line {
 .waiting{
     margin-top: 100px;
 }
+
+.scrollable{
+    overflow: auto;
+    height: 300px;
+}

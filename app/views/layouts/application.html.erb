@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Provemewrong2</title>
+    <meta charset="utf-8"/>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,7 +10,7 @@
   </head>
 
   <body class="container">
-  <%= render 'layouts/topnavbar' %>
+  <% #<%= render 'layouts/topnavbar' %>
 
   <% if notice.present? %>
       <aside class="alert alert-info">

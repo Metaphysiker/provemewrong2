@@ -3,6 +3,9 @@ class ArgumentationsController < ApplicationController
 
   PAGE_SIZE = 10
 
+  def sanitizepreview
+    @sanitized = ActionController::Base.helpers.sanitize(params[:tosanitize])
+  end
 
   def index
 
@@ -63,6 +66,9 @@ class ArgumentationsController < ApplicationController
     @argumentations = current_user.argumentations
   end
 
+  def searchtitle
+    @argumentations = Argumentation.search_by_title(params[:keywords])
+  end
   private
 
   def updatearguments(argumentation, param_arguments)

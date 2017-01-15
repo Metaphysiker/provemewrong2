@@ -133,11 +133,12 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$san
     };
 }]);
 
-app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', function($location, $http, $timeout, $sce){
+app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', '$routeParams', function($location, $http, $timeout, $sce,$routeParams){
 
     return {
         link: function(scope, element, attr)
         {
+
             scope.search = function(keywords, direction){
                 scope.highlightterm = keywords;
                 scope.loading = true;
@@ -187,6 +188,13 @@ app.directive("getArgumentations",['$location','$http', '$timeout', '$sce', func
                     return '<span class="highlightedText">' + match + '</span>';
                 }));
             };
+
+            var navsearchterms = $routeParams.navsearchterms;
+            if(navsearchterms != undefined){
+                scope.keywords = navsearchterms;
+                scope.search(navsearchterms);
+                navsearchterms = undefined;
+            }
         }
     };
 }]);
@@ -256,26 +264,8 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                 }
             };
 
-            scope.addForeignArgumentation = function(){
-                swal({
-                        title: "An input!",
-                        text: "Write something interesting:",
-                        type: "input",
-                        showCancelButton: true,
-                        closeOnConfirm: false,
-                        animation: "slide-from-top",
-                        inputPlaceholder: "Write something"
-                    },
-                    function(inputValue){
-                        if (inputValue === false) return false;
+            scope.addReferenceToArgumentation = function(){
 
-                        if (inputValue === "") {
-                            swal.showInputError("You need to write something!");
-                            return false
-                        }
-                        var jesus = "JESUS";
-                        swal("Nice!", "You wrote: " + jesus, "success");
-                    });
             };
 
             scope.addArgument = function(){
@@ -490,7 +480,7 @@ app.directive("myArgumentations",['$location', '$timeout', '$http', '$filter', f
                     scope.movingBlock = 2;
                     $timeout(function () {
                         $location.path("/" + id + '/edit').search({"sp": 3});
-                    }, 700);
+                    }, 1300);
                 });
             };
 

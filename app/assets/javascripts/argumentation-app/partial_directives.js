@@ -104,3 +104,40 @@ app.directive("userPanel",['$location', '$timeout', function($location,$timeout)
     };
 
 }]);
+
+app.directive("navBar",['$location', '$timeout', function($location,$timeout){
+
+    return {
+        link: function(scope, element, attr)
+        {
+            scope.searchnav = function(searchterms){
+                $location.path("/search").search({"navsearchterms": searchterms});
+            }
+
+        },
+        templateUrl:"nav_bar.html"
+    };
+
+}]);
+
+app.directive("searchForArgumentation",['$location', '$timeout', '$http', function($location,$timeout, $http){
+
+    return {
+        link: function(scope, element, attr)
+        {
+            scope.searchargumentationbytitle = function(keywords){
+                $http({
+                    method: 'POST',
+                    url: '/searchtitle.json',
+                    params: {keywords: keywords}
+                }).then(function successCallback(response) {
+                    scope.argumentations = response.data;
+                });
+            }
+
+        },
+        templateUrl:"argumentation/edit_elements/search_for_argumentation.html"
+    };
+
+}]);
+
