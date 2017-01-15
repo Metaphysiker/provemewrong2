@@ -125,7 +125,7 @@ feature "angular test" do
     click_button "Bearbeiten"
     click_button "Referenz hinzufügen"
     fill_in "keywords", with: "Kafka, Parmenides und das"
-    sleep 3
+    sleep 2
     expect(page).to have_content("Kafka, Parmenides und das Absurde das Lebendige und das Enorme")
     click_button "Kafka, Parmenides und das Absurde das Lebendige und das Enorme"
     expect(page).to have_content("Kopieren und im Text einfügen!")

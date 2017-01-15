@@ -6,11 +6,7 @@
     "angular-animate": "latest",
     "angular-sanitize": "latest",
     "angular-translate": "latest",
-    "sweetalert": "latest",
-    "angular-sweetalert": "latest",
-    "angular-h-sweetalert": "latest",
-    "ng-sweet-alert": "latest"
-  },
-  "resolutions": {
+    "angular-mocks": "latest",
+    "sweetalert": "latest"
   }
 }

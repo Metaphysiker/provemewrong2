@@ -3,4 +3,5 @@ asset 'angular-route'
 asset 'angular-animate'
 asset 'angular-sanitize'
 asset 'angular-translate'
+asset 'angular-mocks'
 asset "sweetalert"
