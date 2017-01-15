@@ -1,19 +1,12 @@
 <div ng-show="referencemode">
     <section class="search-form">
         <form>
-            <div class="input-group input-group-lg">
                 <label for="keywords" class="sr-only">Keywords</label>
                 <input type="text"
                        name="keywords"
-                       class="form-control input-lg"
-                       ng-model="keywords">
-                <span class="input-group-btn">
-                    <button class="btn btn-primary btn-lg"
-                            ng-click="searchargumentationbytitle(keywords)">
-                     <span translate="SEARCH"></span>
-                    </button>
-                </span>
-            </div>
+                       class="form-control"
+                       ng-model="keywords"
+                       ng-change="searchargumentationbytitle(keywords)">
         </form>
     </section>
 

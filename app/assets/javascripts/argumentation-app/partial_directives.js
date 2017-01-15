@@ -135,13 +135,16 @@ app.directive("searchForArgumentation",['$location', '$timeout', '$http', functi
             };
 
             scope.searchargumentationbytitle = function(keywords){
-                $http({
-                    method: 'POST',
-                    url: '/searchtitle.json',
-                    params: {keywords: keywords}
-                }).then(function successCallback(response) {
-                    scope.argumentations = response.data;
-                });
+
+                if(keywords.length > 3){
+                    $http({
+                        method: 'POST',
+                        url: '/searchtitle.json',
+                        params: {keywords: keywords}
+                    }).then(function successCallback(response) {
+                        scope.argumentations = response.data;
+                    });
+                }
             };
 
             scope.createPastable = function(argumentation){
