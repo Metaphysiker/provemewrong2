@@ -45,4 +45,16 @@ if Rails.env == 'development'
     end
   end
 
+  Argument.all.each do |argument|
+    3.times do
+      ArgumentComment.create(
+          title: Faker::Lorem.sentence,
+          content: Faker::Lorem.paragraph(10, true, 10),
+          argument_id: argument.id,
+          user_id: Random.rand(1..User.all.count)
+      )
+    end
+
+  end
+
 end

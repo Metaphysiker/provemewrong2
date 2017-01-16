@@ -92,6 +92,7 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$san
             }).then(function successCallback(response) {
                 scope.argumentation = response.data;
                 scope.argumentcontent = scope.getnthargument(response.data, 1);
+                scope.getcomments(scope.getnthargument(response.data, 1));
                // scope.argumentcontent = scope.argumentation.arguments[0];
                 scope.loading = false;
                 $timeout(function () {
@@ -102,6 +103,7 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$san
 
             scope.getcontent = function(argument){
                 scope.argumentcontent = argument;
+                scope.getcomments(argument);
             };
 
             scope.getnthargument = function(argumentation, place){

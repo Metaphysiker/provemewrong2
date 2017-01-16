@@ -46,6 +46,40 @@ CREATE TABLE ar_internal_metadata (
 
 
 --
+-- Name: argument_comments; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE argument_comments (
+    id integer NOT NULL,
+    title character varying,
+    content text,
+    argument_id integer,
+    user_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: argument_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE argument_comments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: argument_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE argument_comments_id_seq OWNED BY argument_comments.id;
+
+
+--
 -- Name: argumentations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -166,6 +200,13 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY argument_comments ALTER COLUMN id SET DEFAULT nextval('argument_comments_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY argumentations ALTER COLUMN id SET DEFAULT nextval('argumentations_id_seq'::regclass);
 
 
@@ -189,6 +230,14 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 ALTER TABLE ONLY ar_internal_metadata
     ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: argument_comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY argument_comments
+    ADD CONSTRAINT argument_comments_pkey PRIMARY KEY (id);
 
 
 --
@@ -221,6 +270,20 @@ ALTER TABLE ONLY schema_migrations
 
 ALTER TABLE ONLY users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_argument_comments_on_argument_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_argument_comments_on_argument_id ON argument_comments USING btree (argument_id);
+
+
+--
+-- Name: index_argument_comments_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_argument_comments_on_user_id ON argument_comments USING btree (user_id);
 
 
 --
@@ -260,6 +323,7 @@ SET search_path TO "$user", public;
 INSERT INTO schema_migrations (version) VALUES
 ('20170105234758'),
 ('20170106003414'),
-('20170106122234');
+('20170106122234'),
+('20170116093514');
 
 

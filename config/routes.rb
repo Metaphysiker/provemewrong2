@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   post '/sanitizepreview', to: "argumentations#sanitizepreview"
 
   post '/searchtitle', to: "argumentations#searchtitle"
+
+  get '/getcomments', to: "argument_comments#getcomments"
 end
