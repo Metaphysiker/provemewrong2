@@ -164,16 +164,6 @@ app.directive("argumentComments",['$location', '$timeout', '$http', function($lo
     return {
         link: function(scope, element, attr)
         {
-            scope.getcomments = function(argument){
-                $http({
-                    method: 'GET',
-                    url: '/getcomments.json',
-                    params: {argument_id: argument.id}
-                }).then(function successCallback(response) {
-                    scope.comments = response.data;
-                    console.log(response.data);
-                });
-            };
 
         },
         templateUrl:"argumentation/view_elements/argument_comments.html"

@@ -101,6 +101,17 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$san
 
             });
 
+            scope.getcomments = function(argument){
+                $http({
+                    method: 'GET',
+                    url: '/getcomments.json',
+                    params: {argument_id: argument.id}
+                }).then(function successCallback(response) {
+                    scope.comments = response.data;
+                    console.log(response.data);
+                });
+            };
+
             scope.getcontent = function(argument){
                 scope.argumentcontent = argument;
                 scope.getcomments(argument);

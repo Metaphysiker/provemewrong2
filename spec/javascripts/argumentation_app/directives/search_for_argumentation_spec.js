@@ -8,21 +8,29 @@ describe('search for argumentation directive', function () {
         $rootScope = _$rootScope_;
     }));
 
-    it('should', function () {
+    it('should correctly create a hyperlink', function () {
         var scope = $rootScope.$new();
         //Arrange
         var element = $compile("<search-for-argumentation />")($rootScope);
 
-        argumentation = {id: 60, title: "Ragnaros"};
-        //var scope = element.isolateScope();
-        console.log(scope);
-        var match = "match";
-
         //Act
         $rootScope.$digest();
+        argumentation = {id: 60, title: "Ragnaros"};
         scope.createPastable(argumentation);
+        expect(scope.pastable).toBe("hyperlink(" + argumentation.id + ":Ragnaros)");
 
-        //Assert
-        expect(scope.pastable).toBe("hyperlink(60:Ragnaros)");
+        argumentation = {id: 509, title: "Ra.g,na:!ros"};
+        scope.createPastable(argumentation);
+        expect(scope.pastable).toBe("hyperlink(" + argumentation.id + ":Ragnaros)");
+
+        argumentation = {id: 37, title: "Ragnaros"};
+        scope.createPastable(argumentation);
+        expect(scope.pastable).toBe("hyperlink(" + argumentation.id + ":Ragnaros)");
+
+        argumentation = {id: 69, title: "Ragnaros"};
+        scope.createPastable(argumentation);
+        expect(scope.pastable).toBe("hyperlink(" + argumentation.id + ":Ragnaros)");
+
+
     });
 });
