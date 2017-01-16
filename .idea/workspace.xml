@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d224295-34ef-4391-9b72-3c959c1e7c77" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/partial_directives.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/partial_directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/javascripts/argumentation_app/directives/search_for_argumentation_spec.js" afterPath="$PROJECT_DIR$/spec/javascripts/argumentation_app/directives/search_for_argumentation_spec.js" />
-    </list>
+    <list default="true" id="7d224295-34ef-4391-9b72-3c959c1e7c77" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -1045,12 +1041,12 @@
       <workItem from="1484382097170" duration="6089000" />
       <workItem from="1484421767575" duration="10777000" />
       <workItem from="1484493220896" duration="17091000" />
-      <workItem from="1484557248210" duration="9546000" />
+      <workItem from="1484557248210" duration="9587000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297828000" />
+    <option name="totallyTimeSpent" value="297869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="76" y="117" width="1210" height="963" extended-state="0" />
