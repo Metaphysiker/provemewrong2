@@ -129,9 +129,9 @@ feature "angular test" do
     expect(page).to have_content("Kafka, Parmenides und das Absurde das Lebendige und das Enorme")
     click_button "Kafka, Parmenides und das Absurde das Lebendige und das Enorme"
     expect(page).to have_content("Kopieren und im Text einfügen!")
-    expect(page.find_field("copypaste").value).to have_content("hyperlink(" + argum.id.to_s + ":Kafka, Parmenides und das Absurde das Lebendige und das Enorme)")
+    expect(page.find_field("copypaste").value).to have_content("hyperlink(" + argum.id.to_s + ':"Kafka, Parmenides und das Absurde das Lebendige und das Enorme"#)')
     #expect(page).to have_content("hyperlink(" + argum.id.to_s + ":Kafka Parmenides und das Absurde das Lebendige und das Enorme)")
-    fill_in "argumentcontent_content", with: "Mein Argument beruht auf der Prämisse, dass Kafka und Sartre etwas gemeinsam haben, siehe: hyperlink(" + argum.id.to_s + ":New Kafka Button)"
+    fill_in "argumentcontent_content", with: "Mein Argument beruht auf der Prämisse, dass Kafka und Sartre etwas gemeinsam haben, siehe: hyperlink(" + argum.id.to_s + ':"New Kafka Button"#)'
     expect(page).to have_button("New Kafka Button")
   end
 

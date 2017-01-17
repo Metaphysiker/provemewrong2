@@ -150,7 +150,7 @@ app.directive("searchForArgumentation",['$location', '$timeout', '$http', functi
 
             scope.createPastable = function(argumentation){
                 //scope.pastable = "hyperlink(" + argumentation.id + ":" + (argumentation.title).replace(/\.|\!|\?|:|,/g,'') + ")";
-                scope.pastable = "hyperlink(" + argumentation.id + ":" + argumentation.title + ")";
+                scope.pastable = "hyperlink(" + argumentation.id + ':"' + argumentation.title + '"#)';
                 console.log(scope.pastable);
             };
 

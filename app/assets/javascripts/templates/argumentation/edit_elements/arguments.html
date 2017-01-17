@@ -9,7 +9,7 @@
 
         <div class="panel-body text-justify">
 
-            <textarea type="text" class="form-control" rows="40" required
+            <textarea type="text" class="form-control" rows="10" required
                       name="argumentcontent_content" ng-model="argumentcontent.content" ng-change="getPreview(argumentcontent.content, argumentcontentpreview)"></textarea>
 
             <div class="lead text-justify white-space-pre-line" ng-bind-html="argumentcontentpreview | buttonMaker" compile-template></div>

@@ -79,10 +79,8 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$san
 
             if(/edit/.test($location.$$path)){
                 scope.environment = "edit";
-                console.log(scope.environment);
             } else {
                 scope.environment = "show";
-                console.log(scope.environment);
             }
 
             scope.loading = true;
@@ -511,7 +509,6 @@ app.directive("myArgumentations",['$location', '$timeout', '$http', '$filter', f
                     url: '/argumentations.json'
                 }).then(function successCallback(response) {
                     var id = response.data.id;
-                    console.log(id);
                     scope.movingBlock = 2;
                     $timeout(function () {
                         $location.path("/" + id + '/edit').search({"sp": 3});
