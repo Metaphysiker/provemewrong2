@@ -259,6 +259,23 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                 }
             });
 
+            scope.getPreview = function(text, scopevariable){
+                console.log(text);
+                $http({
+                    method: 'GET',
+                    url: 'sanitizepreview.json',
+                    params:  {text: text}
+                }).then(function successCallback(response) {
+                    if(scopevariable == "argumentationcontentpreview"){
+                        scope.argumentationcontentpreview = response.data.clean;
+                        console.log("argumentation");
+                    } else {
+                        scope.argumentcontentpreview = response.data.clean;
+                        console.log("argument");
+                    }
+                });
+            };
+
             scope.save = function(){
                 var currentplace = scope.argumentcontent.place;
                 if (scope.form.$valid) {

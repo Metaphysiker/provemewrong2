@@ -4,7 +4,8 @@ class ArgumentationsController < ApplicationController
   PAGE_SIZE = 10
 
   def sanitizepreview
-    @sanitized = ActionController::Base.helpers.sanitize(params[:tosanitize])
+    @sanitized = ActionController::Base.helpers.sanitize(params[:text])
+    Rails::logger.debug @sanitized.inspect
   end
 
   def index

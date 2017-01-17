@@ -5,9 +5,10 @@
 </h1>
 
 <textarea type="text" class="form-control" rows="15" required
-          name="argumentation_content" ng-model="argumentation.content"></textarea>
+          name="argumentation_content" ng-model="argumentation.content"
+          ng-change="getPreview(argumentation.content, 'argumentationcontentpreview')"></textarea>
 
-<argumentation-content></argumentation-content>
+<div class="lead text-justify white-space-pre-line" ng-bind-html="argumentationcontentpreview" compile-template></div>
 
 <h3 class="display-3"><span translate="BY"></span> {{ argumentation.owner }}</h3>
 

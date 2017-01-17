@@ -19,18 +19,5 @@ describe('search for argumentation directive', function () {
         scope.createPastable(argumentation);
         expect(scope.pastable).toBe("hyperlink(" + argumentation.id + ":Ragnaros)");
 
-        argumentation = {id: 509, title: "Ra.g,na:!ros"};
-        scope.createPastable(argumentation);
-        expect(scope.pastable).toBe("hyperlink(" + argumentation.id + ":Ragnaros)");
-
-        argumentation = {id: 37, title: "Ragnaros"};
-        scope.createPastable(argumentation);
-        expect(scope.pastable).toBe("hyperlink(" + argumentation.id + ":Ragnaros)");
-
-        argumentation = {id: 69, title: "Ragnaros"};
-        scope.createPastable(argumentation);
-        expect(scope.pastable).toBe("hyperlink(" + argumentation.id + ":Ragnaros)");
-
-
     });
 });
