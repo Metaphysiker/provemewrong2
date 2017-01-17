@@ -79,8 +79,10 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$san
 
             if(/edit/.test($location.$$path)){
                 scope.environment = "edit";
+                console.log(scope.environment);
             } else {
                 scope.environment = "show";
+                console.log(scope.environment);
             }
 
             scope.loading = true;
@@ -91,8 +93,16 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$san
                 params: {id: scope.argumentationId}
             }).then(function successCallback(response) {
                 scope.argumentation = response.data;
-                scope.argumentcontent = scope.getnthargument(response.data, 1);
-                scope.getcomments(scope.getnthargument(response.data, 1));
+
+
+                var argumentu = scope.getnthargument(response.data, 1);
+                scope.argumentcontent = argumentu;
+
+                scope.getcomments(argumentu);
+                if (scope.environment == "edit"){
+                    scope.argumentationcontentpreview = scope.getPreview(response.data.content, 'argumentationcontentpreview');
+                    scope.argumentcontentpreview = scope.getPreview(argumentu.content, 'argumentcontentpreview');
+                }
                // scope.argumentcontent = scope.argumentation.arguments[0];
                 scope.loading = false;
                 $timeout(function () {
@@ -108,13 +118,15 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$san
                     params: {argument_id: argument.id}
                 }).then(function successCallback(response) {
                     scope.comments = response.data;
-                    console.log(response.data);
                 });
             };
 
             scope.getcontent = function(argument){
                 scope.argumentcontent = argument;
                 scope.getcomments(argument);
+                if (scope.environment == "edit"){
+                    scope.argumentcontentpreview = scope.getPreview(argument.content, 'argumentcontentpreview');
+                }
             };
 
             scope.getnthargument = function(argumentation, place){
@@ -260,7 +272,6 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
             });
 
             scope.getPreview = function(text, scopevariable){
-                console.log(text);
                 $http({
                     method: 'GET',
                     url: 'sanitizepreview.json',
@@ -268,10 +279,8 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                 }).then(function successCallback(response) {
                     if(scopevariable == "argumentationcontentpreview"){
                         scope.argumentationcontentpreview = response.data.clean;
-                        console.log("argumentation");
                     } else {
                         scope.argumentcontentpreview = response.data.clean;
-                        console.log("argument");
                     }
                 });
             };
