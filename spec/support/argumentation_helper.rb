@@ -3,6 +3,7 @@ module ArgumentationHelper
     visit "/users/sign_in"
     fill_in "Email", with: email
     fill_in "Password", with: password
+    save_screenshot('screzen.png', full: true)
     click_button "Log in"
   end
 
@@ -16,7 +17,6 @@ module ArgumentationHelper
     click_button "Speichern"
     sleep 1
     click_button "OK"
-
     click_button "Übersicht"
     expect(page).to have_content("A Defence of Moral Realism")
   end

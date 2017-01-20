@@ -7,11 +7,14 @@ feature "angular test" do
 
   before do
     User.create!(email: email,
-                 password: password,
-                 password_confirmation: password)
+              password: password,
+              password_confirmation: password)
+   # user = FactoryGirl.create(:user)
+   #@user = FactoryGirl.build(:user, :email => email, :password => password, :password_confirmation => password)
   end
 
-
+#Preparations for test: Devise does not accept current user
+#user_panel.html -> remove condition
   scenario "Our Angular App is Working" do
     log_in(email, password)
     expect(page).to have_content("We're using Rails 5.0.1")
@@ -133,6 +136,17 @@ feature "angular test" do
     #expect(page).to have_content("hyperlink(" + argum.id.to_s + ":Kafka Parmenides und das Absurde das Lebendige und das Enorme)")
     fill_in "argumentcontent_content", with: "Mein Argument beruht auf der Prämisse, dass Kafka und Sartre etwas gemeinsam haben, siehe: hyperlink(" + argum.id.to_s + ':"New Kafka Button"#)'
     expect(page).to have_button("New Kafka Button")
+  end
+
+  scenario "User tries to access, that does not belong to him" do
+    anotheruser = User.create!(email: "anotheruser@gmail.com",
+                               password: "abcdefgh123",
+                               password_confirmation: "abcdefgh123")
+    argum = Argumentation.create(title: "Kafka, Parmenides und das Absurde das Lebendige und das Enorme", content: "Kafka und Sartre haben etwas gemeinsam, beide räumen dem Absurden einen besonderen Platz ein.", user_id: anotheruser.id)
+
+    log_in(email, password)
+    visit "/argumentation#!/" + argum.id.to_s + "/edit"
+    expect(page).not_to have_content("Kafka, Parmenides und das Absurde das Lebendige und das Enorme")
   end
 
 

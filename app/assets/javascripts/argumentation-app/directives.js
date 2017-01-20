@@ -91,8 +91,6 @@ app.directive("getArgumentation",['$location','$http', '$timeout', '$sce', '$san
                 params: {id: scope.argumentationId}
             }).then(function successCallback(response) {
                 scope.argumentation = response.data;
-
-
                 var argumentu = scope.getnthargument(response.data, 1);
                 scope.argumentcontent = argumentu;
 
@@ -277,8 +275,10 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                 }).then(function successCallback(response) {
                     if(scopevariable == "argumentationcontentpreview"){
                         scope.argumentationcontentpreview = response.data.clean;
-                    } else {
+                    } else if(scopevariable == "argumentcontentpreview") {
                         scope.argumentcontentpreview = response.data.clean;
+                    } else if(scopevariable == "commentpreview") {
+                        scope.commentpreview = response.data.clean;
                     }
                 });
             };

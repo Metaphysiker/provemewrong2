@@ -7,9 +7,12 @@ var app = angular.module(
         'pascalprecht.translate'
     ]);
 
-app.controller("mainArgumentationController", ['$scope','$routeParams', '$translate', function($scope, $routeParams, $translate){
+app.controller("mainArgumentationController", ['$scope','$routeParams', '$translate', '$http', function($scope, $routeParams, $translate, $http){
     $scope.argumentationId =  $routeParams.id;
     $scope.startingposition = $routeParams.sp;
+    $http.get("/getcurrentuser.json").then(function(data,status,headers,config) {
+        $scope.userid = data.data;
+   });
     $scope.loading = false;
     $scope.page = 0;
     $scope.keywords = "";

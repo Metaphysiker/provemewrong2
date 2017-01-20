@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   post '/searchtitle', to: "argumentations#searchtitle"
 
   get '/getcomments', to: "argument_comments#getcomments"
+
+  get '/getcurrentuser', to: "dashboard#get_current_user"
 end
