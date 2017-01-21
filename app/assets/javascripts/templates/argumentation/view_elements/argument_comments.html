@@ -1,3 +1,14 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{comment.title}}</h3>
+    </div>
+    <div class="panel-body">
+        <textarea type="text" class="form-control" rows="4" required
+                  name="argumentcomment" ng-model="argumentcomment" ng-change="getPreview(argumentcomment, 'argumentcommentpreview')"></textarea>
+        <div class="lead text-justify white-space-pre-line" ng-bind-html="argumentcommentpreview | buttonMaker" compile-template></div>
+    </div>
+</div>
+
 <div ng-repeat="comment in comments">
 
     <div class="panel panel-primary">
@@ -10,3 +21,6 @@
     </div>
 
 </div>
+
+<textarea type="text" class="form-control" rows="10" required
+          name="argumentcontent_content" ng-model="argumentcontent.content" ng-change="getPreview(argumentcontent.content, 'argumentcontentpreview')"></textarea>
