@@ -5,9 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Role.create!(role: "Admin")
+Role.create!(role: "Editor")
+Role.create!(role: "Premium")
+Role.create!(role: "Commentator")
+
+
 if Rails.env == 'development'
   mainuser = User.create!(email: "s.raess@me.com", password: "password")
-
+  mainuser.roles << Role.where(role: "Admin")
   10.times do
     argumentation = Argumentation.create!(
         title: Faker::Lorem.sentence,

@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :argumentations
   has_many :argument_comments
+  has_many :user_roles
+  has_many :roles, through: :user_roles
 end
