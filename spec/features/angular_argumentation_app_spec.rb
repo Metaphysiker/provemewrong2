@@ -11,7 +11,6 @@ feature "angular test" do
   #login_as(user, :scope => :user)
 
   before do
-
     #login_as(user, :scope => :user)
     @user = User.create!(email: email,
              password: password,
@@ -19,10 +18,7 @@ feature "angular test" do
     #puts @user.id
     #login_as(user, :scope => :user)
    # user = FactoryGirl.create(:user)
-
     #@user = FactoryGirl.build(:user, :email => email, :password => password, :id => 1)
-
-    puts @user.id
   end
 
 #Preparations for test: Devise does not accept current user
@@ -63,10 +59,12 @@ feature "angular test" do
 
     click_button "Bearbeiten"
     click_button "Argumente tauschen"
+    sleep 2
     check 'A case against Moral Nihilism'
     check 'Moral Properties are not natural'
     click_button "Tauschen"
     click_button "Speichern"
+    find_button("OK").trigger('click')
     click_button "Bearbeitungsmodus verlassen"
     sleep 3
 
@@ -151,7 +149,7 @@ feature "angular test" do
     expect(page).to have_button("New Kafka Button")
   end
 
-  scenario "User tries to access, that does not belong to him" do
+  scenario "User tries to edit an argumentation, that does not belong to him" do
     anotheruser = User.create!(email: "anotheruser@gmail.com",
                                password: "abcdefgh123",
                                password_confirmation: "abcdefgh123")
@@ -159,7 +157,8 @@ feature "angular test" do
 
     log_in(email, password)
     visit "/argumentation#!/" + argum.id.to_s + "/edit"
-    expect(page).not_to have_content("Kafka, Parmenides und das Absurde das Lebendige und das Enorme")
+      expect(page).not_to have_content("Übersicht")
+      expect(page).not_to have_content("Bearbeiten")
   end
 
 

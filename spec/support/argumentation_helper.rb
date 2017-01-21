@@ -15,8 +15,10 @@ module ArgumentationHelper
     fill_in "argumentation_title", with: "A Defence of Moral Realism"
     fill_in "argumentation_content", with: "Russ Shafer-Landau"
     click_button "Speichern"
-    sleep 1
-    click_button "OK"
+    sleep 2
+    #click_button "OK"
+    find_button("OK").trigger('click')
+
     sleep 2
     click_button "Übersicht"
     expect(page).to have_content("A Defence of Moral Realism")
