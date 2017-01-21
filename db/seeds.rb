@@ -14,6 +14,7 @@ Role.create!(role: "Commentator")
 if Rails.env == 'development'
   mainuser = User.create!(email: "s.raess@me.com", password: "password")
   mainuser.roles << Role.where(role: "Admin")
+
   10.times do
     argumentation = Argumentation.create!(
         title: Faker::Lorem.sentence,
