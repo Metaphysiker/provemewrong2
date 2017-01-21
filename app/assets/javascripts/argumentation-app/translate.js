@@ -88,7 +88,7 @@ angular.module(
         EDIT: "Bearbeiten",
         LEAVE_EDIT: "Bearbeitungsmodus verlassen",
         CREATE_ARGUMENTATION: "Argumentation erstellen",
-        SHOW: "Zeigen",
+        SHOW: "Ansehen",
         UNSAVED_CHANGES: "Ungespeicherte Veränderungen",
         UNSAVED_CHANGES_COMMENT: "Alle Veränderungen gehen verloren, wenn Sie nicht speichern",
         UNSAVED_CHANGES_CONFIRM: "Ja, Veränderungen nicht speichern",

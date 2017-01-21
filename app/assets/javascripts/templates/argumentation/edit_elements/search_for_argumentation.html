@@ -12,7 +12,21 @@
     </section>
 
     <section class="scrollable">
-        <div ng-repeat="argumentation in argumentations">
+
+        <div ng-if="waitingForArgumentations">
+            <br><br><br><br>
+            <div class="col-md-10 col-md-offset-1">
+                <aside class="progress">
+                    <div class="progress-bar progress-bar-striped active"
+                         style="width: 100%">
+                        Loading…
+                    </div>
+                </aside>
+            </div>
+            <br>
+        </div>
+
+        <div ng-repeat="argumentation in argumentations" ng-if="!waitingForArgumentations">
             <button class="btn btn-default btn-block" ng-if="argumentation.id"
                     ng-click="createPastable(argumentation)">
                 <span class="pull-left">{{argumentation.title}}</span><span class="pull-right"> - <span translate="BY"></span> {{argumentation.owner}}</span>

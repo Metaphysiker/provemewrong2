@@ -125,6 +125,7 @@ app.directive("searchForArgumentation",['$location', '$timeout', '$http', functi
     return {
         link: function(scope, element, attr)
         {
+            scope.waitingForArgumentations = false;
             scope.addReference = function(){
                 if (scope.referencemode == false){
                     scope.referencemode = true;
@@ -136,15 +137,18 @@ app.directive("searchForArgumentation",['$location', '$timeout', '$http', functi
             };
 
             scope.searchargumentationbytitle = function(keywords){
-
-                if(keywords.length > 3){
-                    $http({
-                        method: 'POST',
-                        url: '/searchtitle.json',
-                        params: {keywords: keywords}
-                    }).then(function successCallback(response) {
-                        scope.argumentations = response.data;
-                    });
+                if (keywords.length > 3){
+                    scope.waitingForArgumentations = true;
+                    if(keywords.length > 3){
+                        $http({
+                            method: 'POST',
+                            url: '/searchtitle.json',
+                            params: {keywords: keywords}
+                        }).then(function successCallback(response) {
+                            scope.waitingForArgumentations = false;
+                            scope.argumentations = response.data;
+                        });
+                    }
                 }
             };
 
