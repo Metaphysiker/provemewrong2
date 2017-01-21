@@ -2,21 +2,34 @@ require 'rails_helper'
 require 'spec_helper'
 
 feature "angular test" do
+  #let(:email) { "bob@example.com" }
+  #let(:password) { "password123" }
+
+  #user = FactoryGirl.create(:user)
   let(:email) { "bob@example.com" }
   let(:password) { "password123" }
+  #login_as(user, :scope => :user)
 
   before do
-    User.create!(email: email,
-              password: password,
-              password_confirmation: password)
+
+    #login_as(user, :scope => :user)
+    @user = User.create!(email: email,
+             password: password,
+             password_confirmation: password)
+    #puts @user.id
+    #login_as(user, :scope => :user)
    # user = FactoryGirl.create(:user)
-   #@user = FactoryGirl.build(:user, :email => email, :password => password, :password_confirmation => password)
+
+    #@user = FactoryGirl.build(:user, :email => email, :password => password, :id => 1)
+
+    puts @user.id
   end
 
 #Preparations for test: Devise does not accept current user
 #user_panel.html -> remove condition
   scenario "Our Angular App is Working" do
     log_in(email, password)
+    visit '/'
     expect(page).to have_content("We're using Rails 5.0.1")
   end
 

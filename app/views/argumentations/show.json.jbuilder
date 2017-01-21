@@ -2,7 +2,7 @@ json.title @argumentation.title
 json.content @argumentation.content
 json.owner @argumentation.user.email
 json.id @argumentation.id
-json.ownerid @argumentation.user.id
+json.user_id @argumentation.user_id
 
 json.arguments @argumentation.arguments do |argument|
   json.title argument.title

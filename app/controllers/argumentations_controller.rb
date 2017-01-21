@@ -5,7 +5,6 @@ class ArgumentationsController < ApplicationController
 
   def sanitizepreview
     @sanitized = ActionController::Base.helpers.sanitize(params[:text])
-    Rails::logger.debug @sanitized.inspect
   end
 
   def index
