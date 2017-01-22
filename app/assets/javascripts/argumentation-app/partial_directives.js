@@ -125,6 +125,7 @@ app.directive("searchForArgumentation",['$location', '$timeout', '$http', functi
     return {
         link: function(scope, element, attr)
         {
+
             scope.waitingForArgumentations = false;
             scope.addReference = function(){
                 if (scope.referencemode == false){
@@ -169,7 +170,25 @@ app.directive("argumentComments",['$location', '$timeout', '$http', function($lo
     return {
         link: function(scope, element, attr)
         {
+            scope.argumentcomment = "";
+            scope.argumentcommentpreview = "";
 
+            scope.getPreview = function(text, scopevariable){
+                console.log(scopevariable);
+                $http({
+                    method: 'GET',
+                    url: 'sanitizepreview.json',
+                    params:  {text: text}
+                }).then(function successCallback(response) {
+                    if(scopevariable == "argumentationcontentpreview"){
+                        scope.argumentationcontentpreview = response.data.clean;
+                    } else if(scopevariable == "argumentcontentpreview") {
+                        scope.argumentcontentpreview = response.data.clean;
+                    } else if(scopevariable == "argumentcommentpreview") {
+                        scope.argumentcommentpreview = response.data.clean;
+                    }
+                });
+            };
         },
         templateUrl:"argumentation/view_elements/argument_comments.html"
     };

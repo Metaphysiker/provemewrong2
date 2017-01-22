@@ -268,6 +268,7 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
             });
 
             scope.getPreview = function(text, scopevariable){
+                console.log(scopevariable);
                 $http({
                     method: 'GET',
                     url: 'sanitizepreview.json',
@@ -277,8 +278,8 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
                         scope.argumentationcontentpreview = response.data.clean;
                     } else if(scopevariable == "argumentcontentpreview") {
                         scope.argumentcontentpreview = response.data.clean;
-                    } else if(scopevariable == "commentpreview") {
-                        scope.commentpreview = response.data.clean;
+                    } else if(scopevariable == "argumentcommentpreview") {
+                        scope.argumentcommentpreview = response.data.clean;
                     }
                 });
             };
