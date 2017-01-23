@@ -173,8 +173,17 @@ app.directive("argumentComments",['$location', '$timeout', '$http', function($lo
             scope.argumentcomment = "";
             scope.argumentcommentpreview = "";
 
+            scope.createArgumentComment = function(comment){
+                $http({
+                    method: 'POST',
+                    url: 'argument_comments.json',
+                    params:  {comment: comment}
+                }).then(function successCallback(response) {
+                    scope.argumentcommentpreview = response.data;
+                });
+            };
+
             scope.getPreview = function(text, scopevariable){
-                console.log(scopevariable);
                 $http({
                     method: 'GET',
                     url: 'sanitizepreview.json',

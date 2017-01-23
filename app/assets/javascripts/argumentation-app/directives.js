@@ -268,7 +268,6 @@ app.directive("getEditMethods",['$location','$http', '$filter', '$timeout', func
             });
 
             scope.getPreview = function(text, scopevariable){
-                console.log(scopevariable);
                 $http({
                     method: 'GET',
                     url: 'sanitizepreview.json',

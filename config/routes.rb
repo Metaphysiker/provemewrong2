@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   get '/getcomments', to: "argument_comments#getcomments"
 
   get '/getcurrentuser', to: "dashboard#get_current_user"
+
+  resources :argument_comments
 end
