@@ -11,6 +11,7 @@
         <div class="text-justify white-space-pre-line" ng-bind-html="argumentcommentpreview | buttonMaker" compile-template></div>
     </div>
     <button ng-click="createComment(argumentcommenttitlepreview, argumentcomment, argumentcontent)"
+            ng-disabled="!argumentcommenttitlepreview || !argumentcomment"
             class="btn btn-lg btn-success">
         <span translate="SWITCH_BUTTON"></span>
     </button>
