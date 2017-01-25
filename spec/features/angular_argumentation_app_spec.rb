@@ -161,6 +161,24 @@ feature "angular test" do
       expect(page).not_to have_content("Bearbeiten")
   end
 
+  scenario "User adds a comment" do
+
+    anotheruser = User.create!(email: "anotheruser@gmail.com",
+                               password: "abcdefgh123",
+                               password_confirmation: "abcdefgh123")
+    argumentation = Argumentation.create(title: "Metaphysik und Natur", content: "Man könnte meinen, Metaphysik und Naturwissenschaften haben etwas gemeinsam.", user_id: anotheruser.id)
+
+    argument = Argument.create(title: "Naturwissenschaft als Fortsetzung der Metaphysik", content:"Es gibt Leute, die sagen, Wissenschaft ist die Beantwortung von metaphysischen Fragen.", argumentation_id: argumentation.id, place: 1)
+    log_in(email, password)
+    visit "/argumentation#!/" + argumentation.id.to_s
+    fill_in "argumentcommenttitle", with: "Das ist mein Kommentar dazu!"
+    fill_in "argumentcomment", with: "Die Argumentation ist gültig, doch sind die Prämissen falsch"
+    click_button "Kommentar erstellen"
+    expect(page).to have_content("Das ist mein Kommentar dazu!")
+    expect(page).to have_content("Die Argumentation ist gültig, doch sind die Prämissen falsch")
+
+  end
+
 
 end
 #save_screenshot('screen.png', full: true)
