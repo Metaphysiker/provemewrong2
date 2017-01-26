@@ -10,6 +10,8 @@ Role.create!(role: "Editor")
 Role.create!(role: "Premium")
 Role.create!(role: "Commentator")
 
+User.create!(email: "anonym@anonym.com", password: "asdfghjklö1234")
+
 
 if Rails.env == 'development'
   mainuser = User.create!(email: "s.raess@me.com", password: "password")

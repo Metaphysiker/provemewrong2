@@ -1,18 +1,17 @@
 <header>
   <h1>
-    Welcome to Shine, <%= current_user.email %>
+    Welcome to Prove Me Wrong
   </h1>
   <h2>
-    We're using Rails <%= Rails.version %>
+   App made by Sandro Räss
   </h2>
 </header>
 <section>
   <p>
-    Future home of Shine's Dashboard
+    Philosophy for the win
   </p>
   <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 </section>
 
 <%= link_to "To the overview", argumentation_url %>
-
-<%= link_to "Jeeesus", root_path, style: 'color:#FFFFFF' %>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
