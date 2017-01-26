@@ -45,7 +45,8 @@ angular.module(
         UNSAVED_CHANGES_COMMENT: "If you leave this page without saving, all changes will be lost",
         UNSAVED_CHANGES_CONFIRM: "Yes, proceed anyway",
         BACK: "Back",
-        CREATE_COMMENT: "Create Comment"
+        CREATE_COMMENT: "Create Comment",
+        COMMENTS: "Comments"
 
 
     });
@@ -94,7 +95,8 @@ angular.module(
         UNSAVED_CHANGES_COMMENT: "Alle Veränderungen gehen verloren, wenn Sie nicht speichern",
         UNSAVED_CHANGES_CONFIRM: "Ja, Veränderungen nicht speichern",
         BACK: "Zurück",
-        CREATE_COMMENT: "Kommentar erstellen"
+        CREATE_COMMENT: "Kommentar erstellen",
+        COMMENTS: "Kommentare"
     });
     $translateProvider.preferredLanguage('de');
     $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
