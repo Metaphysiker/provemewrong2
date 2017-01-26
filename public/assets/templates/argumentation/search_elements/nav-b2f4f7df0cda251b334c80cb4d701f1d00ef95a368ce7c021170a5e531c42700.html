@@ -1,0 +1,10 @@
+<nav>
+    <ul class="pager">
+        <li class="previous" ng-if="page > 0">
+            <a href="" ng-click="previousPage()">&larr; <span translate="PREVIOUS"></span></a>
+        </li>
+        <li class="next" ng-if="argumentations.length == argumentations[0].limit">
+            <a href="" ng-click="nextPage()"><span translate="NEXT"></span> &rarr;</a>
+        </li>
+    </ul>
+</nav>

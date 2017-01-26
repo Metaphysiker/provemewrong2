@@ -1,0 +1,87 @@
+<div class="col-md-3">
+
+    <div class="panel panel-success">
+        <button ng-click="save()" ng-disabled="form.$invalid || form.$pristine" type="button" class="btn btn-success btn-block">
+            <h3 class="panel-title pull-left">
+                <span translate="SAVE" ng-if="!form.$dirty"></span>
+                <span translate="NOTSAVED" ng-if="form.$dirty"></span>
+            </h3>
+            <i class="fa fa-floppy-o pull-right" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="panel panel-info">
+        <button ng-click=" addReference()" type="button" class="btn btn-info btn-block"><h3 class="panel-title pull-left"><span translate="ADD_REFERENCE"></span></h3><i class="fa fa-link pull-right" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="panel panel-info">
+        <button ng-click="addArgument()" type="button" class="btn btn-info btn-block"><h3 class="panel-title pull-left"><span translate="ADD_ARGUMENT"></span></h3><i class="fa fa-plus pull-right" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="panel panel-info">
+        <button ng-click="toggleSwitchMode()" type="button" class="btn btn-info btn-block"><h3 class="panel-title pull-left"><span translate="SWITCH_HEADER"></span></h3><i class="fa fa-refresh pull-right" aria-hidden="true"></i></button>
+
+        <div class="panel-body" ng-if="switchmode == true">
+            <p translate="SWITCH_INSTRUCTIONS"></p>
+            <button ng-click="switcharguments()"
+                    class="btn btn-lg btn-info">
+                <span translate="SWITCH_BUTTON"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="panel panel-danger">
+        <button ng-click="toggleDeleteMode()" type="button" class="btn btn-danger btn-block"><h3 class="panel-title pull-left"><span translate="DELETE_HEADER"></span></h3><i class="fa fa-times pull-right" aria-hidden="true"></i></button>
+
+        <div class="panel-body" ng-if="deletemode == true">
+            <p translate="DELETE_INSTRUCTIONS"></p>
+            <button ng-click="destroyArgument()" ng-disabled="selectedArgumentToDestroy == 'nothing'"
+                    class="btn btn-lg btn-danger">
+                <span translate="DELETE_BUTTON"></span>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading text-justify">
+            <h3 class="panel-title"><span translate="ARGUMENTS"></span></h3>
+        </div>
+
+
+        <div class="list-group">
+            <div ng-repeat="argument in argumentation.arguments | orderBy:'place'">
+                <a class="list-group-item" ng-click="getcontent(argument)" ng-if="switchmode == false && deletemode == false" ng-class="{'higha': argument == argumentcontent} ">
+                    <h4 class="list-group-item-heading">
+                                        <textarea type="text" class="form-control" rows="4" required
+                                                  name="argumentcontent_title" ng-model="argument.title" ng-if="argument == argumentcontent"></textarea>
+                        {{ argument.title }}</h4>
+
+                </a>
+                <div style="text-align: left" ng-if="switchmode == true">
+                    <input
+                            type="checkbox"
+                            name="{{argument.title}}"
+                            value="{{argument}}"
+                            ng-checked="selectedArguments.indexOf(argument) > -1"
+                            ng-click="toggleSelection(argument)"
+                    > {{ argument.title}}
+                    <hr>
+                </div>
+
+                <div style="text-align: left" ng-if="deletemode == true">
+                    <input
+                            ng-model="$parent.$parent.argumentToDelete"
+                            type="radio"
+                            name="{{argument.title}}"
+                            value="{{argument}}"
+                            ng-click="toggleSelectionForDeletion(argument)"
+                    > {{ argument.title}}
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

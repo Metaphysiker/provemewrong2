@@ -1,0 +1,42 @@
+<div ng-show="referencemode">
+    <section class="search-form">
+        <form>
+                <label for="keywords" class="sr-only">Keywords</label>
+                <input type="text"
+                       name="keywords"
+                       class="form-control"
+                       placeholder= "{{'SEARCH_SHORT_PLACEHOLDER' | translate }}"
+                       ng-model="keywords"
+                       ng-change="searchargumentationbytitle(keywords)">
+        </form>
+    </section>
+
+    <section class="scrollable">
+
+        <div ng-if="waitingForArgumentations">
+            <br><br><br><br>
+            <div class="col-md-10 col-md-offset-1">
+                <aside class="progress">
+                    <div class="progress-bar progress-bar-striped active"
+                         style="width: 100%">
+                        Loading…
+                    </div>
+                </aside>
+            </div>
+            <br>
+        </div>
+
+        <div ng-repeat="argumentation in argumentations" ng-if="!waitingForArgumentations">
+            <button class="btn btn-default btn-block" ng-if="argumentation.id"
+                    ng-click="createPastable(argumentation)">
+                <span class="pull-left">{{argumentation.title}}</span><span class="pull-right"> - <span translate="BY"></span> {{argumentation.owner}}</span>
+            </button>
+        </div>
+    </section>
+    <section class="well" ng-show="pastable">
+        <span translate="COPY_PASTE"></span> <br><br><input name="copypaste" class="form-control" id="inputDefault" type="text" ng-model="pastable">
+    </section>
+    <section class="well" ng-show="!pastable">
+        <span translate="SEARCH_COMMENT"></span>
+    </section>
+</div>
