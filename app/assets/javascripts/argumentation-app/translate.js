@@ -1,5 +1,5 @@
 angular.module(
-    'ArgumentationController').config(function ($translateProvider) {
+    'ArgumentationController').config([function ($translateProvider) {
     $translateProvider.translations('en', {
         TITLE: 'Hello',
         FOO: 'This is a paragraph.',
@@ -100,4 +100,4 @@ angular.module(
     });
     $translateProvider.preferredLanguage('de');
     $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
-});
+}]);
