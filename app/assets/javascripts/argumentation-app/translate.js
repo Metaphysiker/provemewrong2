@@ -1,5 +1,5 @@
 angular.module(
-    'ArgumentationController').config([function ($translateProvider) {
+    'ArgumentationController').config(['$translateProvider', function ($translateProvider) {
     $translateProvider.translations('en', {
         TITLE: 'Hello',
         FOO: 'This is a paragraph.',
