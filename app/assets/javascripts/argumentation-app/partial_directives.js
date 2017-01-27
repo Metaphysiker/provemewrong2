@@ -121,6 +121,7 @@ app.directive("navBar",['$location', '$timeout', '$http', '$window', function($l
                 }).then(function successCallback(response) {
                     console.log(response);
                     $window.location.reload();
+                    $location.path("/start");
                 });
 
             };
