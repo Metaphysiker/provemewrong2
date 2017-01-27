@@ -23,12 +23,6 @@ feature "angular test" do
 
 #Preparations for test: Devise does not accept current user
 #user_panel.html -> remove condition
-  scenario "Our Angular App is Working" do
-    log_in(email, password)
-    visit '/'
-    expect(page).to have_content("We're using Rails 5.0.1")
-  end
-
   scenario "User creates an argumentation" do
     log_in(email, password)
     create_single_argumentation_and_go_to_overview
@@ -157,8 +151,7 @@ feature "angular test" do
 
     log_in(email, password)
     visit "/argumentation#!/" + argum.id.to_s + "/edit"
-      expect(page).not_to have_content("Übersicht")
-      expect(page).not_to have_content("Bearbeiten")
+    expect(page).not_to have_content("Bearbeitungsmodus verlassen")
   end
 
   scenario "User adds a comment" do

@@ -5,6 +5,9 @@ angular.module(
         $routeProvider.when("/overview",{
             controller: "mainArgumentationController",
             templateUrl: "argumentation/overview.html"
+        }).when("/start",{
+            controller: "mainArgumentationController",
+            templateUrl: "argumentation/start.html"
         }).when("/search",{
             controller: "mainArgumentationController",
             templateUrl: "argumentation/search.html"
@@ -14,9 +17,9 @@ angular.module(
         }).when("/:id/edit",{
             controller: "mainArgumentationController",
             templateUrl: "argumentation/edit.html"
-        }).otherwise("/overview",{
+        }).otherwise("/start",{
             controller: "mainArgumentationController",
-            templateUrl: "argumentation/overview.html"
+            templateUrl: "argumentation/start.html"
         });
     }
 ]);

@@ -12,7 +12,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
-                <li ng-if="userid != 0"><a href="#"><span translate="OVERVIEW"></span></a></li>
+                <li ng-if="userid != 0"><a href="/argumentation#!/overview"><span translate="OVERVIEW"></span></a></li>
                 <li class="dropdown" ng-if="userid == -2">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -42,7 +42,7 @@
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li ng-if="userid != 0"><a href="/users/sign_out">Log Out</a></li>
+                <li ng-if="userid != 0"><a ng-click="logout()">Log Out</a></li>
                 <li ng-if="userid == 0"><a href="/users/sign_up">Sign Up</a></li>
                 <li ng-if="userid == 0"><a href="/users/sign_in">Log In</a></li>
                 <change-language-button></change-language-button>

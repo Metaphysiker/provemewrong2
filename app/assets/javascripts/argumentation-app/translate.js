@@ -46,7 +46,9 @@ angular.module(
         UNSAVED_CHANGES_CONFIRM: "Yes, proceed anyway",
         BACK: "Back",
         CREATE_COMMENT: "Create Comment",
-        COMMENTS: "Comments"
+        COMMENTS: "Comments",
+        WELCOME: "Welcome to Prove Me Wrong!",
+        INTRO: 'Prove Me Wrong is a platform, where users can read, comment and create argumentations for all subject manners. Use the searchfunction to find an existing argumentation or log in to create an argumentation!'
 
 
     });
@@ -96,7 +98,9 @@ angular.module(
         UNSAVED_CHANGES_CONFIRM: "Ja, Veränderungen nicht speichern",
         BACK: "Zurück",
         CREATE_COMMENT: "Kommentar erstellen",
-        COMMENTS: "Kommentare"
+        COMMENTS: "Kommentare",
+        WELCOME: "Willkommen auf Prove Me Wrong!",
+        INTRO: "Prove Me Wrong ist eine Plattform, auf der User kostenlos Argumentationen zu verschiedensten Themen lesen, erstellen und kommentieren können. Benutze die Suchfunktion, um eine bestehende Argumentation zu finden oder logge dich ein, um selber eine Argumentation zu erstellen!"
     });
     $translateProvider.preferredLanguage('de');
     $translateProvider.useSanitizeValueStrategy('sanitizeParameters');

@@ -105,14 +105,25 @@ app.directive("userPanel",['$location', '$timeout', function($location,$timeout)
 
 }]);
 
-app.directive("navBar",['$location', '$timeout', function($location,$timeout){
+app.directive("navBar",['$location', '$timeout', '$http', '$window', function($location,$timeout, $http, $window){
 
     return {
         link: function(scope, element, attr)
         {
             scope.searchnav = function(searchterms){
                 $location.path("/search").search({"navsearchterms": searchterms});
-            }
+            };
+
+            scope.logout = function(){
+                $http({
+                    method: 'GET',
+                    url: '/logout'
+                }).then(function successCallback(response) {
+                    console.log(response);
+                    $window.location.reload();
+                });
+
+            };
 
         },
         templateUrl:"nav_bar.html"

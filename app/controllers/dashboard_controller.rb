@@ -16,4 +16,9 @@ class DashboardController < ApplicationController
       format.json { render json: @id}
     end
   end
+
+  def logout
+    sign_out
+    redirect_to root_path
+  end
 end

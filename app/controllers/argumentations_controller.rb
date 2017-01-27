@@ -109,7 +109,6 @@ class ArgumentationsController < ApplicationController
 
   def find_argumentation
     @argumentation = Argumentation.find(params[:id])
-    Rails::logger.debug @argumentation.inspect
   end
 
 

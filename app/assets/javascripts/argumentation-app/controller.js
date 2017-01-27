@@ -12,7 +12,6 @@ app.controller("mainArgumentationController", ['$scope','$routeParams', '$transl
     $scope.startingposition = $routeParams.sp;
     $http.get("/getcurrentuser.json").then(function(data,status,headers,config) {
         $scope.userid = data.data;
-        console.log(data.data);
    });
     $scope.loading = false;
     $scope.page = 0;

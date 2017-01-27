@@ -18,7 +18,7 @@ module ArgumentationHelper
     sleep 2
     #click_button "OK"
     find_button("OK").trigger('click')
-
+    save_screenshot('screen.png', full: true)
     sleep 2
     click_button "Übersicht"
     expect(page).to have_content("A Defence of Moral Realism")
