@@ -1,224 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d224295-34ef-4391-9b72-3c959c1e7c77" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/404.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/422.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/500.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/apple-touch-icon-precomposed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/apple-touch-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/.sprockets-manifest-17a8c9f75d3bb15dc833eadfd52e4153.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-219d04b7f75022f5f2207bab622f15a627125093fc6f6077ed5cd59ba422341a.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-219d04b7f75022f5f2207bab622f15a627125093fc6f6077ed5cd59ba422341a.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-ed5261e15fae66e08b43d4465e889e10e1f9563ab61a3ecb133d1c6864a93669.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-ed5261e15fae66e08b43d4465e889e10e1f9563ab61a3ecb133d1c6864a93669.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8.ttf.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/1.3.1-d440d0116a27a8a8b81c27f6bad3e8f0ac8d6947b7092ef4f2dfb379b030c9a0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/1.3.1-d440d0116a27a8a8b81c27f6bad3e8f0ac8d6947b7092ef4f2dfb379b030c9a0.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.0.3-760839e88ed7b20fba9f635ccfbe12522e3b12372e2f05202cfc4a61d5861b88.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.0.3-760839e88ed7b20fba9f635ccfbe12522e3b12372e2f05202cfc4a61d5861b88.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.1.3-a09424b263ded0459f1747b79966b94a8cc72fb09c60b8e3c2a8545c2ced262f.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.1.3-a09424b263ded0459f1747b79966b94a8cc72fb09c60b8e3c2a8545c2ced262f.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.2.0-36ccb16d3b8cb028dbb4ba8678e420e521189afd8d74fe536f6f321c86afeb59.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.2.0-36ccb16d3b8cb028dbb4ba8678e420e521189afd8d74fe536f6f321c86afeb59.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.2.1-b8ec60fde13410418f2dbe5740c82f9cc281c21bf98b61f41fc1794c203671cd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.2.1-b8ec60fde13410418f2dbe5740c82f9cc281c21bf98b61f41fc1794c203671cd.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.3.4-aa35a2d6ef4c597846860937831b786d7a7b61cf7b7d860a06b484aa1b637276.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jasmine/2.3.4-aa35a2d6ef4c597846860937831b786d7a7b61cf7b7d860a06b484aa1b637276.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/bind-poly-673e8b5b90e465c606475ec50508a4019faf6fc1c4f6456ffa7e4d03a64c1f28.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/bind-poly-673e8b5b90e465c606475ec50508a4019faf6fc1c4f6456ffa7e4d03a64c1f28.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/jasmine-jquery-1.7.0-883fa44df3e469aad57e634ac2db4905e01c5fac0e812c12417f9608118fedea.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/jasmine-jquery-1.7.0-883fa44df3e469aad57e634ac2db4905e01c5fac0e812c12417f9608118fedea.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/jasmine-jquery-2.0.0-1a1a950339b064cc29e2844476b951bc409ccfc26c32f946190d5227887e44b8.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/jasmine-jquery-2.0.0-1a1a950339b064cc29e2844476b951bc409ccfc26c32f946190d5227887e44b8.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/jasmine-jquery-2.1.0-1624d8a0db0ca8307990db9318b11603713308aa106c783d841f1438bf1d53b5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/jasmine-jquery-2.1.0-1624d8a0db0ca8307990db9318b11603713308aa106c783d841f1438bf1d53b5.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/phantomjs-shims-f6867d3adaf9c1a659d0ca8e170f147e97bbde37736890cf05d84e7b5020fed4.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/phantomjs-shims-f6867d3adaf9c1a659d0ca8e170f147e97bbde37736890cf05d84e7b5020fed4.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/sinon-107004c65c42d732bf89855e57cf0be455a37c11d349eb973e6b319ce327636f.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/support/sinon-107004c65c42d732bf89855e57cf0be455a37c11d349eb973e6b319ce327636f.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon-6e7be868738f20e0ca2ab731d5f577e0dd6bed588b1660eb2b2dc6b0328341dd.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon-6e7be868738f20e0ca2ab731d5f577e0dd6bed588b1660eb2b2dc6b0328341dd.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon-filterer-65c5f62e0af566bf9d24f413533144277cb7d2fa9461e8307332fede303af366.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon-filterer-65c5f62e0af566bf9d24f413533144277cb7d2fa9461e8307332fede303af366.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon-jasmine1-003e2e25c7584e481ff370226c72c617a2b8b110ad50e2268972e83315d6d9c4.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon-jasmine1-003e2e25c7584e481ff370226c72c617a2b8b110ad50e2268972e83315d6d9c4.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon-jasmine2-193432e902b3943f7e511bf7ba322e1ce098119d180978aaff50918567da9361.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon-jasmine2-193432e902b3943f7e511bf7ba322e1ce098119d180978aaff50918567da9361.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/error-ed40c173b6c340f9f88aa29f298fc370041a4a9bb4aaac5c2df778e3acc38c23.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/error-ed40c173b6c340f9f88aa29f298fc370041a4a9bb4aaac5c2df778e3acc38c23.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/fixture-15ea3a98066ffb5b2aa459070193d201721302969b079b9912262989bd8a6f15.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/fixture-15ea3a98066ffb5b2aa459070193d201721302969b079b9912262989bd8a6f15.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/hook-ec064ae75a75d93d1c216357ee877bf295c3a76406c83d5d5d4dddaa39d5c56e.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/hook-ec064ae75a75d93d1c216357ee877bf295c3a76406c83d5d5d4dddaa39d5c56e.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1-c77604cd2984de29bd77050212fbfe1f12f61f3cb11b1b10f8fd9648d55f949b.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1-c77604cd2984de29bd77050212fbfe1f12f61f3cb11b1b10f8fd9648d55f949b.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/fixture-f3e81c6271ff42b2f6fcd5c22817aea3a937c5f957ea29fce5e8af6327b07a2b.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/fixture-f3e81c6271ff42b2f6fcd5c22817aea3a937c5f957ea29fce5e8af6327b07a2b.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/initialize-245b9b0d37d3283e3fce828853b279d38b016df864da8340a84caa115952788c.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/initialize-245b9b0d37d3283e3fce828853b279d38b016df864da8340a84caa115952788c.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/reporters/html-679008ad79785a1024b11e41dceb577e700f37984c570d27717f999619eb455b.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/reporters/html-679008ad79785a1024b11e41dceb577e700f37984c570d27717f999619eb455b.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/responder-d10c23b336b9688db6bdee83d1ab84d2a916f62ee89a4e816c99b17c6ed34d97.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/responder-d10c23b336b9688db6bdee83d1ab84d2a916f62ee89a4e816c99b17c6ed34d97.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/runner-813d10cb2df653a3c7380a0ab4c7ad411cdfad5a405af95c1a2499fc1ed0824f.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/runner-813d10cb2df653a3c7380a0ab4c7ad411cdfad5a405af95c1a2499fc1ed0824f.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/spec-7abbff3d9d719a46d665f3741f0d3561da9532869238785b8658e200b2d66c1c.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/spec-7abbff3d9d719a46d665f3741f0d3561da9532869238785b8658e200b2d66c1c.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/suite-c2bd1137d458eaa384ac44cab71ba9d15293d6a60a649d08bd73a05304a76394.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine1/suite-c2bd1137d458eaa384ac44cab71ba9d15293d6a60a649d08bd73a05304a76394.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2-57c886ecb7bf40b7ec6c2b796a6b3fc28b642a0bfba4840a206adc8012e16796.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2-57c886ecb7bf40b7ec6c2b796a6b3fc28b642a0bfba4840a206adc8012e16796.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/fixture-1743f2680c06c70654c9487fe5f853f110913c75bb4d28dc68ce39f143980022.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/fixture-1743f2680c06c70654c9487fe5f853f110913c75bb4d28dc68ce39f143980022.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/initialize-755a6d4b05a1bc0717e1e1c649074d5d4de0d56c7404fdbd4db74f3f20ea91a0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/initialize-755a6d4b05a1bc0717e1e1c649074d5d4de0d56c7404fdbd4db74f3f20ea91a0.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/reporters/html-7c315b933acf11c59dc2289eace2b446394b8963432ec8814b8176eb2ad6a43c.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/reporters/html-7c315b933acf11c59dc2289eace2b446394b8963432ec8814b8176eb2ad6a43c.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/responder-c9a769e8163f921326006b3ffc08f0efde1fb611b05fd1031ace71c90836e7a0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/responder-c9a769e8163f921326006b3ffc08f0efde1fb611b05fd1031ace71c90836e7a0.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/runner-ff83e494207318c66409199ea188c5f663419a1bafcaf1b414ffc0532eec67d8.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/runner-ff83e494207318c66409199ea188c5f663419a1bafcaf1b414ffc0532eec67d8.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/spec-2dfa8835df55b8c530ff95f47c8270f483f7d70a123b15fe630f94020145e149.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/spec-2dfa8835df55b8c530ff95f47c8270f483f7d70a123b15fe630f94020145e149.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/suite-e02bbbcf5cde5a4435ad43e7d3e7b139a382386c2b8aeb8f6f7b16d45879a4d9.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/jasmine2/suite-e02bbbcf5cde5a4435ad43e7d3e7b139a382386c2b8aeb8f6f7b16d45879a4d9.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/mixins/_namespace-993072f3a3bad29931c7ae3796da83211751b431a1b5dd0e7000d8a9f31749a4.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/mixins/_namespace-993072f3a3bad29931c7ae3796da83211751b431a1b5dd0e7000d8a9f31749a4.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/mixins/filter_url-3c28b0728075125dae1f6a0ca0dad24305cfa8b1fe1f65158d668d34a33ccdc2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/mixins/filter_url-3c28b0728075125dae1f6a0ca0dad24305cfa8b1fe1f65158d668d34a33ccdc2.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/console-68db4ebe2179bea0ba0c66f5569855523da296eb8f86dbe238eb9ac16f14ea26.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/console-68db4ebe2179bea0ba0c66f5569855523da296eb8f86dbe238eb9ac16f14ea26.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html-74cfa53601501fa6e7dc69bb4f87c2b85fe1c4183d559e0712f4b17d2d8e3c52.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html-74cfa53601501fa6e7dc69bb4f87c2b85fe1c4183d559e0712f4b17d2d8e3c52.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/base_view-54bde87f8b590ea172add9df2a359baefdc0eb070e83b1f665b5b1d249f48d0a.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/base_view-54bde87f8b590ea172add9df2a359baefdc0eb070e83b1f665b5b1d249f48d0a.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/failure_view-abd3e946408c91f53c0bd91aba0b84f81e5cbf26eecfdc7879b31b61d7bf659c.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/failure_view-abd3e946408c91f53c0bd91aba0b84f81e5cbf26eecfdc7879b31b61d7bf659c.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/progress_view-d1b347af3952c1071537f62c62e6c16f6e836bc7025336dd850939ccbbd9f780.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/progress_view-d1b347af3952c1071537f62c62e6c16f6e836bc7025336dd850939ccbbd9f780.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/radial_progress_view-25afc296c1bf32b144ee3790b90c0423090ae89b17c10487d790c8dd906d54ef.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/radial_progress_view-25afc296c1bf32b144ee3790b90c0423090ae89b17c10487d790c8dd906d54ef.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/simple_progress_view-40fe2b0a3e3d2a2050ed512822f389a7e1e2b38ea6a0521026c06e72630a08d5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/simple_progress_view-40fe2b0a3e3d2a2050ed512822f389a7e1e2b38ea6a0521026c06e72630a08d5.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/spec_view-8a12c2c3e77af6c4c71f7cb48f3a2a82ac380e3c44973cb79cfc844befdf17ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/spec_view-8a12c2c3e77af6c4c71f7cb48f3a2a82ac380e3c44973cb79cfc844befdf17ca.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/suite_view-575eb8e0c83c87db9a490f41259a215bd112f84a2cb53f759f128f07943750ef.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/suite_view-575eb8e0c83c87db9a490f41259a215bd112f84a2cb53f759f128f07943750ef.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/template-e15ab6124990c3d9620fe993674b221f7414191e73bcaff69f78c4db34bc9964.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/reporters/html/template-e15ab6124990c3d9620fe993674b221f7414191e73bcaff69f78c4db34bc9964.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/runner-372c32fa19323633724027319fd4d3239912deb0b4f149f9c16c7a8f0c73f1f2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/runner-372c32fa19323633724027319fd4d3239912deb0b4f149f9c16c7a8f0c73f1f2.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/spec-44a8c0e55729145b278c858f52c816caf08755d5f65b069bbb37a024f4adca36.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/spec-44a8c0e55729145b278c858f52c816caf08755d5f65b069bbb37a024f4adca36.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/suite-3702bb638b0fb2b8f7a5a565bf2a8eab5c6f3993ea62099f8162776f6b29324e.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/suite-3702bb638b0fb2b8f7a5a565bf2a8eab5c6f3993ea62099f8162776f6b29324e.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/teaspoon-7115c93e22145e79ca73086d9c4c995bed32b863fb031b661fdb79aba79a91fc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/teaspoon-7115c93e22145e79ca73086d9c4c995bed32b863fb031b661fdb79aba79a91fc.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/utility-07cd011cd6b9c2f37ad4f0d12d6e5a1025589d64303cd608ca9117cd16fd4dad.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/teaspoon/utility-07cd011cd6b9c2f37ad4f0d12d6e5a1025589d64303cd608ca9117cd16fd4dad.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/change_language_button-dc9a2912ae04e91550bc5f38c8a45b31d55f62248f2ff6f8551bd07016590b93.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/change_language_button-dc9a2912ae04e91550bc5f38c8a45b31d55f62248f2ff6f8551bd07016590b93.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit-d5bff2c2af912014fab23f6d1292061aff62c7a028e074facc59b764ae62bab5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit-d5bff2c2af912014fab23f6d1292061aff62c7a028e074facc59b764ae62bab5.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit_elements/arguments-2f42d1f64395a2d7ac484f64d8f4492252feeb53e92613fcefb2f1b71c3305b1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit_elements/arguments-2f42d1f64395a2d7ac484f64d8f4492252feeb53e92613fcefb2f1b71c3305b1.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit_elements/search_for_argumentation-504b8f0e89d7c5d8a6cc718a9a7b83d0889bcf55327d588d502a9e5c4cbe9ee0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit_elements/search_for_argumentation-504b8f0e89d7c5d8a6cc718a9a7b83d0889bcf55327d588d502a9e5c4cbe9ee0.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit_elements/sidebar-50d00a95d68fe22ca3d040199e663174b6f0ff665e0e8cbfdd02c9de6e696933.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit_elements/sidebar-50d00a95d68fe22ca3d040199e663174b6f0ff665e0e8cbfdd02c9de6e696933.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit_elements/top-f5f11a3c73442aad4862f0ea185b0746063772e7b3de6a15b3c242fa77c4eec3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/edit_elements/top-f5f11a3c73442aad4862f0ea185b0746063772e7b3de6a15b3c242fa77c4eec3.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/loading_bar-f3cee9d08e8f217a5f3b0b9add4d8f7e8e0e39df1af0fd984e4281f05049e9e5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/loading_bar-f3cee9d08e8f217a5f3b0b9add4d8f7e8e0e39df1af0fd984e4281f05049e9e5.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/my_argumentations-ecd6256fcd4959243ccb5580348388c5f9b337dca26ed7b0081cfc2aca621b14.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/my_argumentations-ecd6256fcd4959243ccb5580348388c5f9b337dca26ed7b0081cfc2aca621b14.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/overview-f3d13b470e49de6d69f799cff91b47adb1a4de52bcc0affd5f67520385febc65.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/overview-f3d13b470e49de6d69f799cff91b47adb1a4de52bcc0affd5f67520385febc65.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/search-ef6303354f14b04364a127645ff64e56093308ac17052d8e373ff9bcfae873d6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/search-ef6303354f14b04364a127645ff64e56093308ac17052d8e373ff9bcfae873d6.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/search_elements/form-b3d301386958b20a9291bc6fe86323a6e75cb1128dd1fdab6f20e543485c67e6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/search_elements/form-b3d301386958b20a9291bc6fe86323a6e75cb1128dd1fdab6f20e543485c67e6.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/search_elements/nav-b2f4f7df0cda251b334c80cb4d701f1d00ef95a368ce7c021170a5e531c42700.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/search_elements/nav-b2f4f7df0cda251b334c80cb4d701f1d00ef95a368ce7c021170a5e531c42700.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/search_elements/results-f2d962d6187befcaad58be9c7c7009d6872bf5c1a6957db661153e467168b21a.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/search_elements/results-f2d962d6187befcaad58be9c7c7009d6872bf5c1a6957db661153e467168b21a.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/show-852ce49bd6ca5993aab5c0970202c18f57f9c142eb9b1502e08d38d870513af5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/show-852ce49bd6ca5993aab5c0970202c18f57f9c142eb9b1502e08d38d870513af5.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/user_panel-8bbe3687be1410d5ffa1d04e9dd38ad0ce97a265eb5b745d9330c3464ef469c0.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/user_panel-8bbe3687be1410d5ffa1d04e9dd38ad0ce97a265eb5b745d9330c3464ef469c0.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/argument_comments-64aa4f706a29b39a2aed3514b2125f9dbab8a8eafead89a8c4aff5ce82c9af0f.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/argument_comments-64aa4f706a29b39a2aed3514b2125f9dbab8a8eafead89a8c4aff5ce82c9af0f.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/argument_content_content-56cdfa9d19822db3d59ffbaefba42649db9ca98eecb06ec5dcda354c01aa306d.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/argument_content_content-56cdfa9d19822db3d59ffbaefba42649db9ca98eecb06ec5dcda354c01aa306d.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/argumentation_content-ed71166137cf2c387ff673a24bcaee336a0c60fcba4a65ebeaacc72ea6cc0a9a.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/argumentation_content-ed71166137cf2c387ff673a24bcaee336a0c60fcba4a65ebeaacc72ea6cc0a9a.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/arguments-a9c13daead548391079ff53bfad330c56b94c16a48cc3bc3d2fa85e7c5d90b2d.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/arguments-a9c13daead548391079ff53bfad330c56b94c16a48cc3bc3d2fa85e7c5d90b2d.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/sidebar-dac81137ecea11737a0aae5c966fefe8c746b4850f48b1eb9cdefc942613561b.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/sidebar-dac81137ecea11737a0aae5c966fefe8c746b4850f48b1eb9cdefc942613561b.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/top-9e599e211879c76c5396eba48592f72ea56eccf959da31e9e203c6150eee4e75.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation/view_elements/top-9e599e211879c76c5396eba48592f72ea56eccf959da31e9e203c6150eee4e75.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/edit-993f2d55784102e62dc9dc56cb96b6f0657a9928fd790a34ce0d1fd775af7d4b.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/edit-993f2d55784102e62dc9dc56cb96b6f0657a9928fd790a34ce0d1fd775af7d4b.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/argumentbody-cf9bbcffb426e849c752b06ce2ceab4d4515eec8a9aab23bbd3e19a5d56302cd.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/argumentbody-cf9bbcffb426e849c752b06ce2ceab4d4515eec8a9aab23bbd3e19a5d56302cd.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/editargumentation-81dd97621beadaa366f3eea4b27556dab99c93cefb269010dc5839c4e59aecdc.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/editargumentation-81dd97621beadaa366f3eea4b27556dab99c93cefb269010dc5839c4e59aecdc.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/loading_bar-f3cee9d08e8f217a5f3b0b9add4d8f7e8e0e39df1af0fd984e4281f05049e9e5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/loading_bar-f3cee9d08e8f217a5f3b0b9add4d8f7e8e0e39df1af0fd984e4281f05049e9e5.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/sidebar-1afd6406f74b63f39c15a7f2a2793a4cefade8d955015433b29ca95af7dd369b.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/sidebar-1afd6406f74b63f39c15a7f2a2793a4cefade8d955015433b29ca95af7dd369b.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/top-9cf88ba1a14d6d913e33b36a16f933036bb90d782f4e6a6d6635f772cca756ea.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/editelements/top-9cf88ba1a14d6d913e33b36a16f933036bb90d782f4e6a6d6635f772cca756ea.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/overview-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/overview-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/search-fbc2ba22c380a69774eba12a2625ce373538d2d937e225708fb493abe2b585e2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/search-fbc2ba22c380a69774eba12a2625ce373538d2d937e225708fb493abe2b585e2.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/loading_bar-f3cee9d08e8f217a5f3b0b9add4d8f7e8e0e39df1af0fd984e4281f05049e9e5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/loading_bar-f3cee9d08e8f217a5f3b0b9add4d8f7e8e0e39df1af0fd984e4281f05049e9e5.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/searchargumentation-ee5677328acbd77ae6bac3956014a0ede08e6ba2f29d026fe1cc5dbb69b163c4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/searchargumentation-ee5677328acbd77ae6bac3956014a0ede08e6ba2f29d026fe1cc5dbb69b163c4.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/searchform-1fd825f6398341d40a822379906cb62758b4d24c1adc796a5ae958cefbcdcaab.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/searchform-1fd825f6398341d40a822379906cb62758b4d24c1adc796a5ae958cefbcdcaab.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/searchnav-deebcb96c428d338546a94a4d7b0c858c9ffe57408e87d797f42b08234a13a7a.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/searchnav-deebcb96c428d338546a94a4d7b0c858c9ffe57408e87d797f42b08234a13a7a.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/searchresults-067050d0a5b292c92a88645df2b393c3b1702bdb1a68e258b387c465ec43c6e8.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/searchelements/searchresults-067050d0a5b292c92a88645df2b393c3b1702bdb1a68e258b387c465ec43c6e8.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/show-bd79c6763d9ce41085a07ca4dd91bec4129e96b9c0f820117bc6a85c9f21ea22.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/show-bd79c6763d9ce41085a07ca4dd91bec4129e96b9c0f820117bc6a85c9f21ea22.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/argumentationcontent-fae3ef09d62f26c4658757dd6004512bab5c144c0af91b7d42e209e1f8f874e9.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/argumentationcontent-fae3ef09d62f26c4658757dd6004512bab5c144c0af91b7d42e209e1f8f874e9.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/argumentbody-2fd85ea93f8c36a7e6b6ff648dc89816bf709d43337a7704b9debd349dc0c451.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/argumentbody-2fd85ea93f8c36a7e6b6ff648dc89816bf709d43337a7704b9debd349dc0c451.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/argumentcontentcontent-4deaf4c022c87351ecff3838fbf11afbfadaa25fc1e19bb8be94c5954e6e6761.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/argumentcontentcontent-4deaf4c022c87351ecff3838fbf11afbfadaa25fc1e19bb8be94c5954e6e6761.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/gotoargumentation-dc0fbb5eb08130e1781d59e8507ccea5d9d36f358feb2d8fcbea4a0597a88db8.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/gotoargumentation-dc0fbb5eb08130e1781d59e8507ccea5d9d36f358feb2d8fcbea4a0597a88db8.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/loading_bar-f3cee9d08e8f217a5f3b0b9add4d8f7e8e0e39df1af0fd984e4281f05049e9e5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/loading_bar-f3cee9d08e8f217a5f3b0b9add4d8f7e8e0e39df1af0fd984e4281f05049e9e5.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/showargumentation-98b12ce4851cd14c8e9415fd04196f73c5bfc42922762ccd32f0abf330a21db3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/showargumentation-98b12ce4851cd14c8e9415fd04196f73c5bfc42922762ccd32f0abf330a21db3.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/sidebar-daace72c3e9b55172ebdd4e10b1c6045b8ec8c0b12b712d781e58fefc20b327b.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/sidebar-daace72c3e9b55172ebdd4e10b1c6045b8ec8c0b12b712d781e58fefc20b327b.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/top-e628be23b19ec6eaa4c9cb54281640c7cb299361bdc8c4bcc1251c595a441d5b.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/argumentation1/showelements/top-e628be23b19ec6eaa4c9cb54281640c7cb299361bdc8c4bcc1251c595a441d5b.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/nav_bar-f2107be8a1ecf695e6a9ce4181c67ff38d428470e32161c7d9b638394189911f.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/templates/nav_bar-f2107be8a1ecf695e6a9ce4181c67ff38d428470e32161c7d9b638394189911f.html.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/robots.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/view_elements/argument_comments.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/templates/argumentation/view_elements/argument_comments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/devise.rb" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" />
-    </list>
+    <list default="true" id="7d224295-34ef-4391-9b72-3c959c1e7c77" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -333,8 +116,8 @@
       <file leaf-file-name="devise.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="76" lean-forward="true" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
+            <state relative-caret-position="300">
+              <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -446,8 +229,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="437" />
-    <option name="y" value="202" />
+    <option name="x" value="462" />
+    <option name="y" value="93" />
     <option name="width" value="1424" />
     <option name="height" value="940" />
   </component>
@@ -1358,16 +1141,16 @@
       <workItem from="1485432671459" duration="957000" />
       <workItem from="1485433677643" duration="7276000" />
       <workItem from="1485446168398" duration="30000" />
-      <workItem from="1485454968388" duration="1458000" />
+      <workItem from="1485454968388" duration="1581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="397102000" />
+    <option name="totallyTimeSpent" value="397225000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="437" y="202" width="1424" height="940" extended-state="0" />
-    <editor active="true" />
+    <frame x="462" y="93" width="1424" height="940" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20972423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1376,7 +1159,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328341" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26728112" sideWeight="0.48536354" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26728112" sideWeight="0.48536354" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1774,8 +1557,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="76" lean-forward="true" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
+        <state relative-caret-position="300">
+          <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
           <folding />
         </state>
       </provider>
