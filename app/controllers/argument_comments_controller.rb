@@ -3,6 +3,10 @@ class ArgumentCommentsController < ApplicationController
     @comments = ArgumentComment.where(argument_id: params[:argument_id])
   end
 
+  def getmycomments
+    @comments = ArgumentComment.where(user_id: current_user.id)
+  end
+
   def create
     title = ActionController::Base.helpers.sanitize(params[:title])
     content = ActionController::Base.helpers.sanitize(params[:content])

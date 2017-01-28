@@ -1,0 +1,20 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th translate="COMMENTS"></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="comment in comments">
+            <td><h4>{{ comment.title }}</h4></td>
+            <td>
+                <button ng-click="goToArgumentation(comment.argumentation_id, 3, 2, false)" class="btn btn-success">
+                    <span translate="SHOW"></span>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

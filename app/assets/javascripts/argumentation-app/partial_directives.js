@@ -132,6 +132,28 @@ app.directive("navBar",['$location', '$timeout', '$http', '$window', function($l
 
 }]);
 
+
+app.directive("myComments",['$location', '$timeout', '$http', '$window', function($location,$timeout, $http, $window){
+
+    return {
+        link: function(scope, element, attr)
+        {
+            scope.getMyComments = function(){
+                $http({
+                    method: 'GET',
+                    url: '/getmycomments.json'
+                }).then(function successCallback(response) {
+                    scope.comments = response.data;
+                });
+            };
+
+            scope.getMyComments();
+        },
+        templateUrl:"argumentation/my_comments.html"
+    };
+
+}]);
+
 app.directive("searchForArgumentation",['$location', '$timeout', '$http', function($location,$timeout, $http){
 
     return {
