@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d224295-34ef-4391-9b72-3c959c1e7c77" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/partial_directives.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/argumentation-app/partial_directives.js" />
-    </list>
+    <list default="true" id="7d224295-34ef-4391-9b72-3c959c1e7c77" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -233,7 +231,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="67" />
     <option name="y" value="76" />
-    <option name="width" value="1034" />
+    <option name="width" value="1762" />
     <option name="height" value="940" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -1040,18 +1038,18 @@
       <workItem from="1485433677643" duration="7276000" />
       <workItem from="1485446168398" duration="30000" />
       <workItem from="1485454968388" duration="2248000" />
-      <workItem from="1485506303965" duration="22364000" />
+      <workItem from="1485506303965" duration="22889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="420256000" />
+    <option name="totallyTimeSpent" value="420781000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="76" width="1034" height="940" extended-state="0" />
+    <frame x="67" y="76" width="1762" height="940" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2965587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17074592" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35965848" sideWeight="0.51463646" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
