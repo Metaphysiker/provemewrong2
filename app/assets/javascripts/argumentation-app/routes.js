@@ -5,6 +5,9 @@ angular.module(
         $routeProvider.when("/overview",{
             controller: "mainArgumentationController",
             templateUrl: "argumentation/overview.html"
+        }).when("/go",{
+            controller: "mainArgumentationController",
+            templateUrl: "argumentation/go.html"
         }).when("/start",{
             controller: "mainArgumentationController",
             templateUrl: "argumentation/start.html"
