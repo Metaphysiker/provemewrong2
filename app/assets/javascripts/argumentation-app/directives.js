@@ -22,7 +22,7 @@ app.directive('editArgumentation', function() {
     };
 });
 
-app.directive('compileTemplate', function($compile, $parse){
+app.directive('compileTemplate', [ '$compile', '$parse', function($compile, $parse){
     return {
         link: function(scope, element, attr){
             var parsed = $parse(attr.ngBindHtml);
@@ -34,7 +34,7 @@ app.directive('compileTemplate', function($compile, $parse){
             });
         }
     }
-});
+}]);
 
 app.directive("goToArgumentationButton",['$location', '$timeout', function($location,$timeout){
 
