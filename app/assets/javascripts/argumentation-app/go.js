@@ -80,31 +80,45 @@ app.directive('goDiagram', function() {
         }
     };
 })
-    .controller('MinimalCtrl', function($scope) {
+    .controller('MinimalCtrl', ['$scope', '$http', function($scope, $http) {
+
+        var centreArgumentation = {};
+        var childArgumentation = {};
+
+        $http({
+            method: 'GET',
+            url: '/argumentations/1.json',
+            params: {id: 1}
+        }).then(function successCallback(response) {
+            centreArgumentation = response.data.title;
+            console.log(centreArgumentation);
+        });
+
+        $http({
+            method: 'GET',
+            url: '/argumentations/2.json',
+            params: {id: 2}
+        }).then(function successCallback(response) {
+            childArgumentation = response.data.title;
+        });
+
         $scope.model = new go.GraphLinksModel(
             [
-                { key: 1, name: "Alpha", color: "lightblue" },
-                { key: 2, name: "Beta", color: "orange" },
-                { key: 3, name: "Gamma", color: "lightgreen" },
-                { key: 4, name: "Delta", color: "pink" }
+                { key: 1, name: centreArgumentation, color: "blue" },
+                { key: 2, name: childArgumentation, color: "blue" }
             ],
             [
-                { from: 1, to: 2 },
-                { from: 1, to: 3 },
-                { from: 2, to: 2 },
-                { from: 3, to: 4 },
-                { from: 4, to: 1 }
+                { from: 1, to: 2 }
             ]);
         $scope.model.selectedNodeData = null;
         $scope.replaceModel = function() {
             $scope.model = new go.GraphLinksModel(
                 [
-                    { key: 11, name: "zeta", color: "red" },
-                    { key: 12, name: "eta", color: "green" }
+                    { key: 1, name: centreArgumentation, color: "blue" },
+                    { key: 2, name: childArgumentation, color: "blue" }
                 ],
                 [
-                    { from: 11, to: 12 }
-                ]
-            );
+                    { from: 1, to: 2 }
+                ]);
         }
-    });
+    }]);
